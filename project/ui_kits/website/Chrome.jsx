@@ -1,3 +1,6 @@
+import React from 'react';
+import { WhatsAppIcon } from './Icons.jsx';
+
 // RDB Travels — Header / Nav
 const Header = ({ active = "home", onNavigate }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -109,4 +112,4 @@ const Footer = () => (
   </footer>
 );
 
-Object.assign(window, { Header, MobileCtaBar, Footer });
+export { Header, MobileCtaBar, Footer };

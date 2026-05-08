@@ -1,5 +1,7 @@
 node_modules/
-dist/
+# dist/ is committed so Cloudflare Pages can serve without a build step.
+# Once build command is configured in Cloudflare, uncomment the line below:
+# dist/
 .env
 .env.*
 .DS_Store

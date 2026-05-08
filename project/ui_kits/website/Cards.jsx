@@ -1,3 +1,5 @@
+import React from 'react';
+
 // RDB Travels — Cards (vehicle + route + scenario + faq + chips)
 
 const Chip = ({ children }) => <span className="chip">{children}</span>;
@@ -108,4 +110,4 @@ const Pillar = ({ n, title, body }) => (
   </div>
 );
 
-Object.assign(window, { Chip, VehicleCard, RouteCard, ScenarioCard, ChannelCard, CredentialCard, FaqItem, Pillar });
+export { Chip, VehicleCard, RouteCard, ScenarioCard, ChannelCard, CredentialCard, FaqItem, Pillar };

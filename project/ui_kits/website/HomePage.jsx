@@ -1,3 +1,7 @@
+import React from 'react';
+import { WhatsAppIcon } from './Icons.jsx';
+import { Chip, VehicleCard, RouteCard, FaqItem, Pillar } from './Cards.jsx';
+
 // RDB Travels — Home page
 
 // ─── Scroll reveal hook (home page) ───────────────────────────────────────────
@@ -430,4 +434,4 @@ const HomePage = ({ onNavigate }) => (
   </main>
 );
 
-Object.assign(window, { HomePage });
+export { HomePage };

@@ -1,3 +1,4 @@
+import React from 'react';
 // RDB Travels — shared icons (inline SVG components)
 const WhatsAppIcon = ({ size = 16 }) => (
   <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
@@ -98,9 +99,9 @@ const MailIcon = () => (
   </svg>
 );
 
-Object.assign(window, {
+export {
   WhatsAppIcon, SedanIcon, SuvIcon, TempoIcon, BusIcon,
   MpvIcon, Tempo17Icon, MaharajaIcon, MiniBusIcon,
   PlaneIcon, PlaneArriveIcon, TempleIcon, RingIcon, BuildingIcon, MountainIcon, SchoolIcon,
   PhoneIcon, MailIcon,
-});
+};

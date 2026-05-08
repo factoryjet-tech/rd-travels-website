@@ -1,3 +1,7 @@
+import React from 'react';
+import { WhatsAppIcon, PlaneIcon, TempleIcon, RingIcon, BuildingIcon } from './Icons.jsx';
+import { ScenarioCard, Chip, Pillar, ChannelCard, CredentialCard } from './Cards.jsx';
+
 // RDB Travels — About page
 
 // ─── Reveal hook (about) ───────────────────────────────────────────────────────
@@ -480,4 +484,4 @@ const QuoteForm = () => {
   );
 };
 
-Object.assign(window, { AboutPage, ContactPage, QuoteForm });
+export { AboutPage, ContactPage, QuoteForm };
