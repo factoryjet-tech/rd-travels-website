@@ -296,34 +296,42 @@ const HomePage = ({ onNavigate }) => (
         </p>
         <div className="grid-auto-320">
           <RouteCard n="01" name="Ahmedabad → Mumbai"
+            href="routes/ahmedabad-to-mumbai.html"
             meta="~525 km · 9–10 hrs · One-way / round trip"
             price="WhatsApp for current rates."
             desc="The most-booked route on the desk. NH 48 via Vadodara, drop to BOM Terminal 2 or T1. Departures are plotted backwards from your boarding time — late-night and 3am drops are routine." />
           <RouteCard n="02" name="Ahmedabad → Rajasthan Circuit"
+            href="routes/ahmedabad-to-rajasthan.html"
             meta="Jaipur / Udaipur / Jodhpur · Multi-day"
             price="WhatsApp for current rates."
             desc="Full circuit or straight to one city. Sedans for couples, Tempos for extended families. Drive times are real; we'll flag which NH segments to watch in the monsoon." />
           <RouteCard n="03" name="Ahmedabad → Surat"
+            href="routes/ahmedabad-to-surat.html"
             meta="~265 km · 4–5 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Gujarat's business corridor. NH 48 south, 4–5 hours depending on traffic leaving Ahmedabad. Popular for corporate day trips and family visits where flying doesn't make sense." />
           <RouteCard n="04" name="Ahmedabad → Vadodara"
+            href="routes/ahmedabad-to-vadodara.html"
             meta="~110 km · 2 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Our shortest outstation run. Airport transfers, business meetings, family visits — works as a quick morning-and-back. Vadodara Airport pickups on the way in from Mumbai flights." />
           <RouteCard n="05" name="Ahmedabad → Rajkot"
+            href="routes/ahmedabad-to-rajkot.html"
             meta="~215 km · 4 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Saurashtra's commercial hub, four hours west on NH 27. Most bookings are business day-trips; some extend to Jamnagar or Dwarka on the same vehicle." />
           <RouteCard n="06" name="Ahmedabad → Bhuj"
+            href="routes/ahmedabad-to-bhuj.html"
             meta="~330 km · 6 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Gateway to Kutch — the white Rann, artisan villages around Hodka, Bhuj old city. Demand runs heavily seasonal Nov–Feb; book the vehicle early if you're planning Rann Utsav." />
           <RouteCard n="07" name="Ahmedabad → Pune"
+            href="routes/ahmedabad-to-pune.html"
             meta="~660 km · 11 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Long haul — full day on the road or a comfortable overnight start. Families relocating, corporate transfers, students. The NH 48 to NH 60 route is well-lit and well-serviced." />
           <RouteCard n="08" name="Ahmedabad → Nashik"
+            href="routes/ahmedabad-to-nashik.html"
             meta="~580 km · 10 hrs · One-way / round"
             price="WhatsApp for current rates."
             desc="Trimbakeshwar, the wine belt, and family connections for many Gujarati households. Can be combined with a Mumbai leg — Nashik to Mumbai is four hours, not a detour." />
