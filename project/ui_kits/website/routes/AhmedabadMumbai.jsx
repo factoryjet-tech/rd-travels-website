@@ -1,4 +1,4 @@
-// RD Travels — Ahmedabad to Mumbai route page (visually redesigned)
+// RDB Travels — Ahmedabad to Mumbai route page (visually redesigned)
 
 // ─── Scroll reveal hook ────────────────────────────────────────────────────────
 const useReveal = (threshold = 0.12) => {

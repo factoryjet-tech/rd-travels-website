@@ -1,4 +1,4 @@
-// RD Travels — About page
+// RDB Travels — About page
 
 // ─── Reveal hook (about) ───────────────────────────────────────────────────────
 const useAboutReveal = (threshold = 0.12) => {
@@ -53,7 +53,7 @@ const MILESTONES = [
   {
     year: "2015",
     title: "Founded",
-    body: "Ronak Dineshbhai Barot starts RD Travels out of Ahmedabad with two sedans and one Tempo Traveller. First Mumbai airport drop is booked within weeks.",
+    body: "Ronak Dineshbhai Barot starts RDB Travels out of Ahmedabad with two sedans and one Tempo Traveller. First Mumbai airport drop is booked within weeks.",
   },
   {
     year: "2018",
@@ -108,7 +108,7 @@ const FounderPortraitCard = () => {
       <div className="about-portrait-card__frame">
         <img
           src="public/images/ronak-portrait-fleet.webp"
-          alt="Ronak Dineshbhai Barot, founder of RD Travels, Ahmedabad"
+          alt="Ronak Dineshbhai Barot, founder of RDB Travels, Ahmedabad"
           className="about-portrait-card__img"
         />
         <div className="about-portrait-card__badge">
@@ -118,7 +118,7 @@ const FounderPortraitCard = () => {
       </div>
       <div className="about-portrait-card__caption">
         <div className="about-portrait-card__name">Ronak Dineshbhai Barot</div>
-        <div className="about-portrait-card__role">Founder · RD Travels · Ahmedabad</div>
+        <div className="about-portrait-card__role">Founder · RDB Travels · Ahmedabad</div>
       </div>
     </div>
   );
@@ -166,7 +166,7 @@ const AboutPage = () => (
           {/* ── Left: copy ── */}
           <div>
             <AboutReveal>
-              <span className="eyebrow">About RD Travels · Ahmedabad</span>
+              <span className="eyebrow">About RDB Travels · Ahmedabad</span>
             </AboutReveal>
             <AboutReveal delay={0.08}>
               <h1 style={{ margin: "var(--space-4) 0 var(--space-4)", maxWidth: "18ch" }}>
@@ -243,7 +243,7 @@ const AboutPage = () => (
               and a "speak to the aggregator" response when something goes wrong.
             </p>
             <p style={{ fontSize: "1.05rem", lineHeight: 1.7, color: "var(--color-ink-soft)", marginBottom: "var(--space-5)" }}>
-              Ronak started RD Travels with a different model: a vetted network of
+              Ronak started RDB Travels with a different model: a vetted network of
               owner-drivers — people who own their vehicles, know their routes, and
               whose names Ronak knows personally. The driver who picks you up for your
               Mumbai run has made that route dozens of times. His livelihood depends on
@@ -362,7 +362,7 @@ const AboutPage = () => (
   </main>
 );
 
-// RD Travels — Contact page
+// RDB Travels — Contact page
 const ContactPage = () => (
   <main>
     <section className="section">

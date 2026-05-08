@@ -1,4 +1,4 @@
-// RD Travels — Header / Nav
+// RDB Travels — Header / Nav
 const Header = ({ active = "home", onNavigate }) => {
   const link = (id, label) => (
     <a
@@ -12,8 +12,8 @@ const Header = ({ active = "home", onNavigate }) => {
     <header className="nav">
       <div className="container nav__inner">
         <a href="#" className="brand" onClick={(e)=>{e.preventDefault(); onNavigate && onNavigate("home");}}>
-          <span className="brand__monogram">R</span>
-          <span>RD Travels</span>
+          <span className="brand__monogram">RDB</span>
+          <span>RDB Travels</span>
         </a>
         <nav className="nav__links" aria-label="Primary">
           {link("home", "Home")}
@@ -46,8 +46,8 @@ const Footer = () => (
       <div className="footer__grid">
         <div className="footer__brand">
           <a href="#" className="brand" style={{ color: "var(--color-white)" }}>
-            <span className="brand__monogram">R</span>
-            <span style={{ color: "var(--color-white)" }}>RD Travels</span>
+            <span className="brand__monogram">RDB</span>
+            <span style={{ color: "var(--color-white)" }}>RDB Travels</span>
           </a>
           <p style={{ margin: "var(--space-4) 0 0", color: "rgba(255,255,255,0.7)", fontSize: "0.95rem", maxWidth: "36ch" }}>
             Ahmedabad's direct travels operator since 2015. Cars, Tempo Travellers, and buses with driver. Vetted owner-driver network, transparent prices, no brokers.
@@ -66,13 +66,13 @@ const Footer = () => (
           <ul className="footer__list">
             <li><a href="#">WhatsApp +91 98765 43210</a></li>
             <li><a href="#">Call +91 98765 43210</a></li>
-            <li><a href="#">hello@rdtravels.in</a></li>
+            <li><a href="#">hello@rdbtravels.in</a></li>
             <li style={{ color: "rgba(255,255,255,0.7)" }}>Ahmedabad, Gujarat 380001</li>
           </ul>
         </div>
       </div>
       <div className="footer__bottom">
-        <span>© 2026 RD Travels. All rights reserved.</span>
+        <span>© 2026 RDB Travels. All rights reserved.</span>
         <span>GST · Tourist Permit · AITP · Insurance · Since 2015</span>
       </div>
     </div>

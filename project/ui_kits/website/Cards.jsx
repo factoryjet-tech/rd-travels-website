@@ -1,4 +1,4 @@
-// RD Travels — Cards (vehicle + route + scenario + faq + chips)
+// RDB Travels — Cards (vehicle + route + scenario + faq + chips)
 
 const Chip = ({ children }) => <span className="chip">{children}</span>;
 

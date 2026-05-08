@@ -1,4 +1,4 @@
-// RD Travels — Home page
+// RDB Travels — Home page
 
 // ─── Scroll reveal hook (home page) ───────────────────────────────────────────
 const useHomeReveal = (threshold = 0.12) => {
@@ -64,7 +64,7 @@ const HomeStatCard = () => {
   ];
   return (
     <div ref={ref} className="home-stat-card">
-      <p className="home-stat-card__eyebrow">RD Travels · Ahmedabad, Gujarat</p>
+      <p className="home-stat-card__eyebrow">RDB Travels · Ahmedabad, Gujarat</p>
       <div className="home-stat-card__grid">
         {STATS.map((s, i) => (
           <div
@@ -139,7 +139,7 @@ const HomePage = ({ onNavigate }) => (
           {/* ── Left: copy ── */}
           <div>
             <HomeReveal>
-              <span className="eyebrow">Ahmedabad's direct operator · Since 2015</span>
+              <span className="eyebrow">Car Rental &amp; Cab Service · Ahmedabad · Since 2015</span>
             </HomeReveal>
 
             <HomeReveal delay={0.08}>
@@ -335,7 +335,7 @@ const HomePage = ({ onNavigate }) => (
     {/* PILLARS — all 5 per CONTENT.md §4 */}
     <section className="section section--alt">
       <div className="container">
-        <span className="eyebrow">Why direct</span>
+        <span className="eyebrow">Why RDB Travels</span>
         <h2 style={{ margin: "var(--space-4) 0 var(--space-3)" }}>
           Five reasons Ahmedabad <span className="accent">keeps coming back.</span>
         </h2>
@@ -389,7 +389,7 @@ const HomePage = ({ onNavigate }) => (
           <FaqItem q="Are night halt charges and driver bata included in the quote?"
             a="Every quote we send is itemised — vehicle rate, driver bata, GST, and applicable night-halt allowance are all listed separately. There are no surprise additions at handover. Tolls, parking, and inter-state permits are billed at actuals and flagged in the quote upfront." />
           <FaqItem q="Do you provide a GST invoice for corporate bookings?"
-            a="Yes. RD Travels is GST-registered and issues a proper tax invoice for every trip — GSTIN is printed on the invoice. Corporate customers can claim input credit. Multiple trips can be consolidated on a single monthly invoice; mention that requirement when you book." />
+            a="Yes. RDB Travels is GST-registered and issues a proper tax invoice for every trip — GSTIN is printed on the invoice. Corporate customers can claim input credit. Multiple trips can be consolidated on a single monthly invoice; mention that requirement when you book." />
           <FaqItem q="How do I book — WhatsApp, call, or the website?"
             a="WhatsApp is the fastest path — share pickup, destination, date, and group size, and a GST-itemised quote comes back in about 15 minutes. For complex itineraries (multi-vehicle weddings, corporate retainers), a call works better. The quote form on the Contact page works too, and we follow up on WhatsApp." />
           <FaqItem q="What's the cancellation policy?"
