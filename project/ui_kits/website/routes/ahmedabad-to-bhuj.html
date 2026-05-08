@@ -162,6 +162,80 @@
   .rp-cta-band__btns .btn { width:100%; max-width:300px; justify-content:center; }
   .rp-stops { gap:0; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   VISUAL REDESIGN PATCH v2 — section spacing & text viz
+   ═══════════════════════════════════════════════════════ */
+
+/* 1. FAQ: kill the oversized gap between header and accordion */
+.rp-faq__header { margin-bottom: var(--space-5) !important; }
+
+/* 2. Section visual rhythm — alternate surface/white */
+.rp-pricing { background: var(--color-surface) !important; }
+.rp-pricing .rp-inline-card { background: #fff; }
+.rp-features { background: #fff; border-top: 1px solid var(--color-border); }
+.rp-prose { background: var(--color-surface) !important; }
+
+/* 3. Prose section: transform text columns into visual insight cards */
+.rp-prose__inner > div {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-7);
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 2px 16px rgba(26,24,21,.05);
+  position: relative;
+  overflow: hidden;
+}
+.rp-prose__inner > div::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-saffron) 0%, #f9a21b 100%);
+}
+/* Highlight circuit/route headings inside prose */
+.rp-prose p:has(> strong:first-child) {
+  background: rgba(232,119,34,.07);
+  border-left: 3px solid var(--color-saffron);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-3) var(--space-4);
+  margin-left: calc(-1 * var(--space-4));
+}
+.rp-prose p strong { color: var(--color-saffron); }
+.rp-prose p { color: var(--color-ink-mute); line-height: 1.8; }
+
+/* 4. Section headings get more breathing room */
+.rp-h2 { margin-bottom: var(--space-6); }
+
+/* 5. Feature cards: tighten to reduce excess height */
+.rp-feature { padding: var(--space-5); }
+.rp-feature__icon { margin-bottom: var(--space-3); }
+.rp-feature__desc { font-size: .85rem; }
+
+/* 6. Related section top border */
+.rp-related { border-top: 1px solid var(--color-border); }
+
+/* 7. Stops strip subtle visual lift */
+.rp-stops-strip {
+  position: relative;
+}
+.rp-stops-strip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(232,119,34,.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* 8. Metrics stat values slightly bigger */
+.rp-metric__val { font-size: 1.5rem; }
+
+/* 9. Include section spacing */
+.rp-included { padding: 80px 0; }
+
+/* 10. CTA band breathing room */
+.rp-cta-band { padding: 80px 0; }
+
 </style>
 </head>
 <body>
@@ -413,47 +487,57 @@
 
 </main>
 
+
+
 <footer class="footer">
-  <div class="container footer__inner">
+  <div class="container footer__grid">
     <div class="footer__brand">
       <span class="footer__name">RDB Travels</span>
       <p class="footer__tagline">Direct operator. No broker. GST invoice on every booking.</p>
-      <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-top:8px;">Founded 2015 · Ahmedabad, Gujarat</p>
+      <p style="font-size:.82rem;color:rgba(255,255,255,.45);margin-top:var(--space-3);line-height:1.5;">Founded 2015 · Ahmedabad, Gujarat<br>Ronak Dineshbhai Barot, proprietor</p>
     </div>
-    <div class="footer__cols">
-      <div>
-        <p class="footer__col-head">Top Routes</p>
-        <a href="ahmedabad-to-mumbai.html" class="footer__link">Ahmedabad → Mumbai</a>
-        <a href="ahmedabad-to-rajasthan.html" class="footer__link">Ahmedabad → Rajasthan</a>
-        <a href="ahmedabad-to-surat.html" class="footer__link">Ahmedabad → Surat</a>
-        <a href="ahmedabad-to-vadodara.html" class="footer__link">Ahmedabad → Vadodara</a>
-        <a href="ahmedabad-to-pune.html" class="footer__link">Ahmedabad → Pune</a>
-      </div>
-      <div>
-        <p class="footer__col-head">Services</p>
-        <a href="../index.html#fleet" class="footer__link">Car Rental Ahmedabad</a>
-        <a href="tempo-traveller-hire-ahmedabad.html" class="footer__link">Tempo Traveller Hire</a>
-        <a href="bus-hire-ahmedabad.html" class="footer__link">Bus with Driver</a>
-        <a href="../index.html#fleet" class="footer__link">Airport Transfers</a>
-      </div>
-      <div>
-        <p class="footer__col-head">Contact</p>
-        <a href="https://wa.me/919876543210" class="footer__link">+91 98765 43210 (WhatsApp)</a>
-        <a href="mailto:hello@rdbtravels.in" class="footer__link">hello@rdbtravels.in</a>
-        <a href="../index.html#about" class="footer__link">About RDB Travels</a>
-      </div>
+    <div>
+      <p class="footer__col-title">Top Routes</p>
+      <ul class="footer__list">
+        <li><a href="ahmedabad-to-rajasthan.html">Ahmedabad → Rajasthan</a></li>
+        <li><a href="ahmedabad-to-mumbai.html">Ahmedabad → Mumbai</a></li>
+        <li><a href="ahmedabad-to-surat.html">Ahmedabad → Surat</a></li>
+        <li><a href="ahmedabad-to-vadodara.html">Ahmedabad → Vadodara</a></li>
+        <li><a href="ahmedabad-to-pune.html">Ahmedabad → Pune</a></li>
+        <li><a href="ahmedabad-to-bhuj.html">Ahmedabad → Bhuj / Kutch</a></li>
+        <li><a href="ahmedabad-to-nashik.html">Ahmedabad → Nashik</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer__col-title">Services</p>
+      <ul class="footer__list">
+        <li><a href="../index.html#fleet">Car Rental Ahmedabad</a></li>
+        <li><a href="tempo-traveller-hire-ahmedabad.html">Tempo Traveller Hire</a></li>
+        <li><a href="bus-hire-ahmedabad.html">Bus with Driver (26–56 seat)</a></li>
+        <li><a href="../index.html#fleet">Airport Transfers</a></li>
+        <li><a href="../index.html#fleet">Outstation Cab Booking</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer__col-title">Get in Touch</p>
+      <ul class="footer__list">
+        <li><a href="https://wa.me/919876543210" target="_blank" rel="noopener">WhatsApp: +91 98765 43210</a></li>
+        <li><a href="tel:+919876543210">Call: +91 98765 43210</a></li>
+        <li><a href="mailto:hello@rdbtravels.in">hello@rdbtravels.in</a></li>
+        <li><a href="../index.html#about">About RDB Travels</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer__bottom">
-    <div class="container">
-      <span>© 2025 RDB Travels. All rights reserved.</span>
-      <span>Ronak Dineshbhai Barot · Ahmedabad</span>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <span>© 2025 RDB Travels · Ahmedabad, Gujarat · All rights reserved.</span>
+      <span>Direct cab & tempo traveller operator since 2015</span>
     </div>
   </div>
 </footer>
-<div class="mobile-cta-bar">
-  <a href="https://wa.me/919876543210?text=Hi%20RDB%20Travels%2C%20I%27d%20like%20a%20quote" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Quote</a>
-  <a href="tel:+919876543210" class="btn btn-call" style="flex:1;justify-content:center;"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.59a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call Now</a>
+<div class="mobile-cta">
+  <a href="https://wa.me/919876543210?text=Hi%20RDB%20Travels%2C%20I%27d%20like%20a%20quote" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp Quote</a>
+  <a href="tel:+919876543210" class="btn btn-call" style="flex:1;justify-content:center;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.9 9.81a19.79 19.79 0 01-3.07-8.64A2 2 0 012.81 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.59a16 16 0 006.29 6.29l.96-.96a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg> Call Now</a>
 </div>
 </body>
 </html>
