@@ -27,16 +27,17 @@ const VehicleCard = ({ icon, image, altText, category, name, capacity, desc, per
   </article>
 );
 
-const RouteCard = ({ n, name, meta, price, desc }) => (
+const RouteCard = ({ n, name, meta, price, desc, href }) => (
   <article className="route-card">
     <div className="route-card__numeral">{n}</div>
     <h3 className="route-card__name">{name}</h3>
     <div className="route-card__meta">{meta}</div>
     <div className="route-card__price">{price}</div>
     <p className="route-card__desc">{desc}</p>
-    <a href="#" style={{ fontWeight: 600, color: "var(--color-ink)", textDecoration: "none", fontSize: "0.95rem" }}>
-      See route detail →
-    </a>
+    {href
+      ? <a href={href} style={{ fontWeight: 600, color: "var(--color-ink)", textDecoration: "none", fontSize: "0.95rem" }}>See route detail →</a>
+      : <a href="#" onClick={(e) => e.preventDefault()} style={{ fontWeight: 600, color: "var(--color-ink)", textDecoration: "none", fontSize: "0.95rem", opacity: 0.5 }}>WhatsApp for quote →</a>
+    }
   </article>
 );
 
