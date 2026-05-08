@@ -239,15 +239,17 @@
 
 /* ── PATCH v3: --wide dead-space fix + hero separation ────────── */
 
-/* Fix --wide prose sections: remove max-width that leaves dead space */
+/* Fix --wide prose sections: switch to flex so both children always fill width */
 .rp-prose__inner--wide {
-  grid-template-columns: 1fr 1fr !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: var(--space-8) !important;
   max-width: none !important;
+  grid-template-columns: unset !important;
 }
-
-/* If only ONE div child in --wide, collapse to full-width single column */
-.rp-prose__inner--wide > div:only-child {
-  grid-column: 1 / -1;
+.rp-prose__inner--wide > div {
+  flex: 1 1 280px !important;
+  min-width: 0 !important;
 }
 
 /* Hero: saffron accent + proper breathing room from nav */

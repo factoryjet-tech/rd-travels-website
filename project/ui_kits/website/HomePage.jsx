@@ -333,35 +333,35 @@ const HomePage = ({ onNavigate }) => (
             capacity="Seats 12 + driver"
             desc="The workhorse for family tours, pilgrimage groups, school trips. AC, push-back seats, luggage space."
             perKm="₹24/km" package="₹6,500" ctaLabel="See Tempo Traveller hire"
-            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
+            ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-17seater.webp"
             altText="17-seater tempo traveller with driver — extended families, corporate groups, college trips"
             category="Tempo Traveller with driver" name="17-seater Tempo Traveller"
             capacity="Seats 17 + driver"
             desc="Extended families, mid-size corporate groups, college trips. Same comfort, more capacity."
             perKm="₹28/km" ctaLabel="See Tempo Traveller hire"
-            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
+            ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-26seater-maharaja.webp"
             altText="26-seater Maharaja tempo traveller with push-back recliners and AC — premium group travel"
             category="Tempo Traveller with driver" name="26-seater Maharaja Tempo"
             capacity="Seats 26 + driver"
             desc="Premium group travel — push-back recliners, AC, large luggage area. Wedding parties, premium tours."
             perKm="₹32/km" ctaLabel="See Tempo Traveller hire"
-            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
+            ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-32seater-mini.webp"
             altText="32-seater mini bus with driver — school trips, mid-size weddings, corporate offsites"
             category="Bus with driver" name="32-seater Mini Bus"
             capacity="Seats 32 + driver"
             desc="School trips, mid-size wedding parties, corporate offsites. AC and non-AC available."
             perKm="₹40/km" ctaLabel="See bus hire options"
-            ctaHref="routes/bus-hire-ahmedabad.html" />
+            ctaHref="bus-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-56seater-volvo.webp"
             altText="56-seater Volvo multi-axle bus with driver — premium long-distance group travel and large pilgrimage groups"
             category="Bus with driver" name="56-seater Volvo Multi-Axle"
             capacity="Seats 56 + driver(s)"
             desc="Premium long-distance group travel. Volvo and Bharat Benz options. Used for weddings, large pilgrimage groups, corporate events."
             perKm="₹70/km" ctaLabel="See bus hire options"
-            ctaHref="routes/bus-hire-ahmedabad.html" />
+            ctaHref="bus-hire-ahmedabad.html" />
         </div>
         <p style={{ fontSize: "0.85rem", color: "var(--color-ink-mute)", marginTop: "var(--space-6)", maxWidth: "70ch" }}>
           Prices are starting rates. Final quote includes GST and accounts for season, route, vehicle availability, and night-halt requirements.
