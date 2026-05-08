@@ -53,6 +53,10 @@
   --space-8: 64px;
   --space-9: 96px;
   --space-10: 128px;
+  --space-11: 64px;
+  --space-12: 80px;
+  --space-13: 96px;
+  --space-14: 112px;
 
   /* ---------- LAYOUT ---------- */
   --max-width:        1200px;
@@ -1153,6 +1157,20 @@ p { margin: 0 0 1em; color: var(--color-ink-soft); }
 }
 .footer__brand {
   color: var(--color-white);
+}
+.footer__name {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+.footer__tagline {
+  color: rgba(255,255,255,.82);
+  font-size: .9rem;
+  line-height: 1.55;
+  margin: 0 0 var(--space-2);
 }
 .footer__col-title {
   font-size: 0.78rem;
