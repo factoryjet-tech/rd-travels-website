@@ -5,6 +5,91 @@ import { Chip, VehicleCard, RouteCard, FaqItem, Pillar } from './Cards.jsx';
 
 // RDB Travels — Home page
 
+// ─── Homepage FAQ: tabbed 2-column redesign ────────────────────────────────────
+const HOME_FAQ_DATA = {
+  Booking: [
+    { q: "Are you a broker or a direct operator?", a: "A direct operator with a vetted owner-driver network. Founded 2015 by Ronak Dineshbhai Barot. We run the dispatch desk in Ahmedabad — we confirm the vehicle, vet every driver by name, and own accountability for your trip. No broker markup, no anonymous-app matching, no 'the operator said something else' on trip day. You can visit the office before you book." },
+    { q: "How do I book — WhatsApp, call, or the website?", a: "WhatsApp is the fastest path — share pickup, destination, date, and group size, and a GST-itemised quote comes back in about 15 minutes. For complex itineraries (multi-vehicle weddings, corporate retainers), a call works better. The quote form on the Contact page works too; we follow up on WhatsApp." },
+    { q: "Do I need to pay an advance to get a quote?", a: "No. Quotes are free and non-binding. We send GST-itemised numbers on WhatsApp; you decide. For confirmed bookings, most one-day trips need no advance. Multi-day tours and bus bookings take a small confirmation amount (10–20% typical), balance settles after the trip." },
+    { q: "What's the cancellation policy?", a: "Day-trip bookings cancelled 24 hours or more before departure are typically charge-free. Multi-day tours and bus bookings follow a sliding scale. The exact terms are stated with your booking confirmation — no hidden clauses." },
+  ],
+  Pricing: [
+    { q: "Is the quote GST-inclusive?", a: "We itemise GST separately so you can see what's vehicle, what's tax. We're GST-registered (GSTIN on every invoice), so corporate customers can claim input credit. The total on the WhatsApp quote is what you pay — no convenience fee added at handover." },
+    { q: "Are night halt charges and driver bata included in the quote?", a: "Every quote we send is itemised — vehicle rate, driver bata, GST, and applicable night-halt allowance are listed separately. There are no surprise additions at handover. Tolls, parking, and inter-state permits are billed at actuals and flagged in the quote upfront." },
+    { q: "Do you provide a GST invoice for corporate bookings?", a: "Yes. RDB Travels is GST-registered and issues a proper tax invoice for every trip — GSTIN is printed on the invoice. Corporate customers can claim input credit. Multiple trips can be consolidated on a single monthly invoice; mention that requirement when you book." },
+    { q: "Do you offer monthly car rental or long-term hire?", a: "Yes — monthly retainer arrangements are available. A dedicated vehicle with a regular driver, consolidated monthly billing, and a GST invoice. Works well for businesses that need regular executive transport or frequent outstation travel without ad-hoc booking overhead." },
+  ],
+  Fleet: [
+    { q: "What's the largest vehicle you operate?", a: "56-seater Volvo Multi-Axle and Bharat Benz coaches for premium long-distance. We also run 45-seater AC coaches, 40-seater AC mini coaches, and 32-seater non-AC mini buses. Below that, the full Tempo Traveller range (9, 12, 17, 20, 26-seater Maharaja) and cars from Sedan to Innova Crysta." },
+    { q: "How many people fit in a tempo traveller?", a: "Our Tempo Traveller range runs from 9-seater to 26-seater Maharaja. The standard 12-seater fits 12 passengers plus driver with luggage; the 17-seater is most-booked for extended families and corporate groups; the 26-seater Maharaja has push-back recliner seats and a larger luggage bay." },
+    { q: "Can I rent a car for a single day in Ahmedabad?", a: "Yes — 8-hour city packages and outstation one-way day trips are available. A sedan or Innova for a single day covers airport transfers, business meetings in Vadodara, or any in-city requirement. Package rates are on the fleet cards; WhatsApp for an exact quote based on your route." },
+    { q: "What permits and insurance cover the vehicles?", a: "Every vehicle has a Tourist Vehicle Permit, All-India Tourist Permit (AITP) for inter-state travel, valid PUC and fitness, and comprehensive insurance covering passengers for the trip duration. Drivers are police-verified. Documentation available on request." },
+  ],
+  Trips: [
+    { q: "Do you handle airport drops and pickups for late-night flights?", a: "Yes — Mumbai BOM Terminal 2 is our most-booked route, including 3am drops and 1am pickups. We work backwards from your boarding time, factor in toll and traffic, and pad realistically. Driver waits for delayed flights at no extra cost up to 90 minutes." },
+    { q: "Do you do multi-day trips like Rajasthan circuit or Somnath–Dwarka?", a: "Yes — Rajasthan circuits (Udaipur, Jaipur, Jodhpur), Somnath–Dwarka pilgrimage, Kutch and Bhuj, and longer routes to Pune or Nashik. We plan the itinerary day-by-day with realistic drive times, and the driver stays with your group throughout." },
+    { q: "Do I get the same vehicle and driver across a multi-day trip?", a: "Yes. The owner-driver who picks you up on day one stays with the trip through the last drop. This is not a relay system — the same person knows the route, knows the group, and is reachable directly. Ronak's dispatch desk also stays contactable for the full duration." },
+    { q: "What if there's a breakdown or issue during the trip?", a: "The driver contacts the office immediately. Ronak's desk arranges a replacement vehicle or roadside support as fast as possible. All vehicles carry valid fitness certificates and are checked before departure — breakdown situations are rare, and we have a clear protocol when they happen." },
+  ],
+};
+
+const HomeFaqItem = ({ n, q, a }) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div className={`hfaq-item${open ? ' hfaq-item--open' : ''}`}>
+      <button className="hfaq-item__q" onClick={() => setOpen(o => !o)} aria-expanded={open}>
+        <span className="hfaq-item__num">{String(n).padStart(2, '0')}</span>
+        <span className="hfaq-item__text">{q}</span>
+        <span className="hfaq-item__icon" aria-hidden="true">{open ? '−' : '+'}</span>
+      </button>
+      {open && (
+        <div className="hfaq-item__a">
+          <p>{a}</p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const HomeFaqSection = () => {
+  const tabs = Object.keys(HOME_FAQ_DATA);
+  const [active, setActive] = React.useState(tabs[0]);
+  const items = HOME_FAQ_DATA[active];
+  const half = Math.ceil(items.length / 2);
+  const col1 = items.slice(0, half);
+  const col2 = items.slice(half);
+  return (
+    <section className="home-faq">
+      <div className="container">
+        <div className="home-faq__header">
+          <span className="eyebrow">Frequently asked</span>
+          <h2 className="home-faq__h2">Honest answers.<br /><span className="accent">No fine print.</span></h2>
+          <p className="home-faq__lead">Every question people ask before they book RDB Travels — answered straight.</p>
+        </div>
+        <div className="home-faq__tabs" role="tablist" aria-label="FAQ categories">
+          {tabs.map(tab => (
+            <button key={tab}
+              role="tab"
+              aria-selected={active === tab}
+              className={`home-faq__tab${active === tab ? ' home-faq__tab--on' : ''}`}
+              onClick={() => setActive(tab)}>
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div className="home-faq__cols">
+          <div className="home-faq__col">
+            {col1.map((item, i) => <HomeFaqItem key={i} n={i + 1} q={item.q} a={item.a} />)}
+          </div>
+          <div className="home-faq__col">
+            {col2.map((item, i) => <HomeFaqItem key={i} n={i + 1 + half} q={item.q} a={item.a} />)}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Scroll reveal hook (home page) ───────────────────────────────────────────
 const useHomeReveal = (threshold = 0.12) => {
   const ref = React.useRef(null);
@@ -247,31 +332,36 @@ const HomePage = ({ onNavigate }) => (
             category="Tempo Traveller with driver" name="12-seater Tempo Traveller"
             capacity="Seats 12 + driver"
             desc="The workhorse for family tours, pilgrimage groups, school trips. AC, push-back seats, luggage space."
-            perKm="₹24/km" package="₹6,500" ctaLabel="Book a 12-seater" />
+            perKm="₹24/km" package="₹6,500" ctaLabel="See Tempo Traveller hire"
+            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-17seater.webp"
             altText="17-seater tempo traveller with driver — extended families, corporate groups, college trips"
             category="Tempo Traveller with driver" name="17-seater Tempo Traveller"
             capacity="Seats 17 + driver"
             desc="Extended families, mid-size corporate groups, college trips. Same comfort, more capacity."
-            perKm="₹28/km" ctaLabel="Book a 17-seater" />
+            perKm="₹28/km" ctaLabel="See Tempo Traveller hire"
+            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-26seater-maharaja.webp"
             altText="26-seater Maharaja tempo traveller with push-back recliners and AC — premium group travel"
             category="Tempo Traveller with driver" name="26-seater Maharaja Tempo"
             capacity="Seats 26 + driver"
             desc="Premium group travel — push-back recliners, AC, large luggage area. Wedding parties, premium tours."
-            perKm="₹32/km" ctaLabel="Book a Maharaja" />
+            perKm="₹32/km" ctaLabel="See Tempo Traveller hire"
+            ctaHref="routes/tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-32seater-mini.webp"
             altText="32-seater mini bus with driver — school trips, mid-size weddings, corporate offsites"
             category="Bus with driver" name="32-seater Mini Bus"
             capacity="Seats 32 + driver"
             desc="School trips, mid-size wedding parties, corporate offsites. AC and non-AC available."
-            perKm="₹40/km" ctaLabel="Book a mini bus" />
+            perKm="₹40/km" ctaLabel="See bus hire options"
+            ctaHref="routes/bus-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-56seater-volvo.webp"
             altText="56-seater Volvo multi-axle bus with driver — premium long-distance group travel and large pilgrimage groups"
             category="Bus with driver" name="56-seater Volvo Multi-Axle"
             capacity="Seats 56 + driver(s)"
             desc="Premium long-distance group travel. Volvo and Bharat Benz options. Used for weddings, large pilgrimage groups, corporate events."
-            perKm="₹70/km" ctaLabel="Book a Volvo" />
+            perKm="₹70/km" ctaLabel="See bus hire options"
+            ctaHref="routes/bus-hire-ahmedabad.html" />
         </div>
         <p style={{ fontSize: "0.85rem", color: "var(--color-ink-mute)", marginTop: "var(--space-6)", maxWidth: "70ch" }}>
           Prices are starting rates. Final quote includes GST and accounts for season, route, vehicle availability, and night-halt requirements.
@@ -369,57 +459,8 @@ const HomePage = ({ onNavigate }) => (
 
     <hr className="divider" />
 
-    {/* FAQ — all 8 per CONTENT.md §7 */}
-    <section className="section">
-      <div className="container" style={{ maxWidth: "820px" }}>
-        <span className="eyebrow">Frequently asked</span>
-        <h2 style={{ margin: "var(--space-4) 0 var(--space-3)" }}>
-          Honest answers, <span className="accent">upfront.</span>
-        </h2>
-        <div style={{ marginTop: "var(--space-6)" }}>
-          <FaqItem defaultOpen q="Are you a broker or a direct operator?"
-            a="A direct operator with a vetted owner-driver network. Founded 2015 by Ronak Dineshbhai Barot. We run the dispatch desk in Ahmedabad — we confirm the vehicle, vet and know every driver by name, and own accountability for your trip. The driver you get owns the vehicle and has made the route many times. No anonymous-app matching, no broker markup, no 'the operator said something else' on trip day. You can come visit the office before you book — most repeat customers have." />
-          <FaqItem q="Do I need to pay an advance to get a quote?"
-            a="No. Quotes are free and non-binding. We send GST-itemised numbers on WhatsApp; you decide. For confirmed bookings, most one-day trips need no advance. Multi-day tours and bus bookings take a small confirmation amount (10–20% typical), balance settles after the trip." />
-          <FaqItem q="Is the quote GST-inclusive?"
-            a="We itemise GST separately so you can see what's vehicle, what's tax. We're GST-registered (GSTIN displayed on every invoice), so corporate customers can claim input credit. The total on the WhatsApp quote is what you pay — no convenience fee at handover." />
-          <FaqItem q="What's the largest vehicle you operate?"
-            a="56-seater Volvo Multi-Axle and 56-seater Bharat Benz coaches for premium long-distance. We also run 45-seater AC coaches, 40-seater AC mini coaches, and 32-seater non-AC mini buses. Below that, the full Tempo Traveller range (9, 12, 17, 20, 26-seater Maharaja). And cars from Sedan to Innova Crysta." />
-          <FaqItem q="Do you handle airport drops and pickups for late-night flights?"
-            a="Yes — Mumbai BOM Terminal 2 is our most-booked route, including 3am drops and 1am pickups. We work backwards from your boarding time, factor in toll and traffic, and pad realistically. Driver waits for delayed flights at no extra cost up to 90 minutes." />
-          <FaqItem q="What permits and insurance cover the vehicles?"
-            a="Every vehicle has a Tourist Vehicle Permit (TVP), All-India Tourist Permit (AITP) for inter-state travel, valid PUC and fitness, and comprehensive insurance covering passengers for the trip duration. Drivers are police-verified and vetted by our office — known to dispatch by name. Documentation available on request." />
-          <FaqItem q="What languages do your drivers speak?"
-            a="Gujarati, Hindi, and basic English on every driver. Specific drivers speak Marathi (Mumbai/Maharashtra routes), Rajasthani (Rajasthan circuits), or other regional languages — request when booking." />
-          <FaqItem q="Do you do single one-way drops, or only round-trips?"
-            a="Both. One-way pricing is per-km outstation rate. Round-trip pricing has a slight per-day discount on the daily kilometers. Mumbai airport drop is the most common one-way; family pilgrimage and tours are usually round-trip." />
-          <FaqItem q="How much does an Ahmedabad to Mumbai taxi cost?"
-            a="The Ahmedabad–Mumbai route is roughly 525 km on NH 48. Rates vary by vehicle class, travel date, and whether the trip is one-way or round-trip — a sedan one-way runs differently from an Innova round-trip. WhatsApp us your dates and group size for a GST-itemised quote; we usually respond in 15 minutes." />
-          <FaqItem q="How many people fit in a tempo traveller?"
-            a="Our Tempo Traveller range runs from 9-seater to 26-seater Maharaja. The standard 12-seater fits 12 passengers plus driver with luggage space; the 17-seater is the most-booked size for extended families and corporate groups; the 26-seater Maharaja has push-back recliner seats and a larger luggage bay. Tell us your group count on WhatsApp and we'll match you to the right vehicle." />
-          <FaqItem q="Can I rent a car for a single day in Ahmedabad?"
-            a="Yes — 8-hour city packages and outstation one-way day trips are available. A sedan or Innova for a single day covers airport transfers, business meetings in Vadodara, or any in-city requirement. Package rates are on the fleet cards; WhatsApp for an exact quote based on your route." />
-          <FaqItem q="Are night halt charges and driver bata included in the quote?"
-            a="Every quote we send is itemised — vehicle rate, driver bata, GST, and applicable night-halt allowance are all listed separately. There are no surprise additions at handover. Tolls, parking, and inter-state permits are billed at actuals and flagged in the quote upfront." />
-          <FaqItem q="Do you provide a GST invoice for corporate bookings?"
-            a="Yes. RDB Travels is GST-registered and issues a proper tax invoice for every trip — GSTIN is printed on the invoice. Corporate customers can claim input credit. Multiple trips can be consolidated on a single monthly invoice; mention that requirement when you book." />
-          <FaqItem q="How do I book — WhatsApp, call, or the website?"
-            a="WhatsApp is the fastest path — share pickup, destination, date, and group size, and a GST-itemised quote comes back in about 15 minutes. For complex itineraries (multi-vehicle weddings, corporate retainers), a call works better. The quote form on the Contact page works too, and we follow up on WhatsApp." />
-          <FaqItem q="What's the cancellation policy?"
-            a="Cancellation terms depend on how far in advance you cancel and the vehicle class booked. Day-trip bookings cancelled 24 hours or more before departure are typically charge-free; multi-day tours and bus bookings follow a sliding scale. The exact terms are stated with your booking confirmation — no hidden clauses." />
-          <FaqItem q="Can I book a Volvo bus for a wedding party from Ahmedabad?"
-            a="Yes. Our 56-seater Volvo Multi-Axle and Bharat Benz coaches are booked regularly for wedding parties — as standalone guest transport or as part of a multi-vehicle arrangement (bridal car, band bus, family Tempos). Book early for peak wedding season. One call or WhatsApp to our desk handles the full fleet requirement." />
-          <FaqItem q="Do you do multi-day trips like Rajasthan circuit, Statue of Unity, or Somnath–Dwarka?"
-            a="Yes — multi-day outstation trips are a significant part of our bookings. Rajasthan circuits (Udaipur, Jaipur, Jodhpur), Somnath–Dwarka pilgrimage, Kutch and Bhuj, and longer routes to Pune or Nashik. We plan the itinerary day-by-day with realistic drive times, and the driver stays with your group throughout." />
-          <FaqItem q="Do I get the same vehicle and driver across a multi-day trip?"
-            a="Yes. The owner-driver who picks you up on day one stays with the trip through the last drop. This is not a relay system — the same person knows the route, knows the group, and is reachable directly. Ronak's dispatch desk also stays contactable for the full duration." />
-          <FaqItem q="What if there's a breakdown or issue during the trip?"
-            a="The driver contacts the office immediately if anything flags on the road. Ronak's desk arranges a replacement vehicle or roadside support as fast as possible. All vehicles carry valid fitness certificates and are checked before departure — breakdown situations are rare, and we have a protocol when they happen." />
-          <FaqItem q="Do you offer monthly car rental or long-term hire from Ahmedabad?"
-            a="Yes — monthly retainer arrangements are available. A dedicated vehicle with a regular driver, consolidated monthly billing, and a GST invoice. Works well for businesses that need regular executive transport or frequent outstation travel without ad-hoc booking overhead. WhatsApp or call the office to discuss terms." />
-        </div>
-      </div>
-    </section>
+    {/* FAQ — redesigned: tabbed 2-column */}
+    <HomeFaqSection />
 
     {/* CTA BAND */}
     <section className="section section--saffron">

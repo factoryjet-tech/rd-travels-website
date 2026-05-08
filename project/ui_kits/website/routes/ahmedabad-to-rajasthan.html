@@ -250,9 +250,11 @@
   grid-column: 1 / -1;
 }
 
-/* Hero top accent to separate from nav */
+/* Hero: saffron accent + proper breathing room from nav */
 .rp-hero {
-  border-top: 3px solid var(--color-saffron);
+  border-top: 4px solid var(--color-saffron);
+  padding-top: var(--space-8) !important; /* 64px — explicit override so calc() fallback is never relied on */
+  padding-bottom: var(--space-7) !important;
 }
 
 /* More breathing room between sections (override CSS where --space-12 was 0) */
