@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .lbl {
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-saffron-deep);
+  }
+  .input {
+    background: #fff;
+    border: 1px solid rgba(26,24,21,0.18);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--color-ink);
+  }
+  .input--focus {
+    border-color: var(--color-saffron);
+    box-shadow: 0 0 0 4px rgba(232,119,34,0.20);
+    outline: none;
+  }
+  .input--err {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 4px rgba(163,50,42,0.18);
+  }
+  .err {
+    font-size: 0.78rem;
+    color: var(--color-error);
+    font-weight: 500;
+  }
+  .help {
+    font-size: 0.78rem;
+    color: var(--color-ink-mute);
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Form fields — eyebrow labels, saffron focus ring</span>
+  <div class="row">
+    <div class="field">
+      <span class="lbl">Pickup</span>
+      <div class="input">Ahmedabad — Satellite</div>
+      <span class="help">Enter your pickup neighbourhood or address.</span>
+    </div>
+    <div class="field">
+      <span class="lbl">Destination</span>
+      <div class="input input--focus">Mumbai International Airport</div>
+      <span class="help">Pan-India · we route via NH 48.</span>
+    </div>
+    <div class="field">
+      <span class="lbl">Phone</span>
+      <div class="input input--err">+91 12345 67890</div>
+      <span class="err">Indian numbers start with 6, 7, 8, or 9.</span>
+    </div>
+    <div class="field">
+      <span class="lbl">Travel date</span>
+      <div class="input" style="color: var(--color-ink-mute);">DD / MM / YYYY</div>
+      <span class="help">Outward date; we'll ask about return on WhatsApp.</span>
+    </div>
+  </div>
+</div>
+</body></html>

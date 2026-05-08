@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .vc {
+    background: #fff;
+    border: 1px solid rgba(26,24,21,0.08);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 320px;
+  }
+  .vc__icon {
+    width: 64px; height: 64px;
+    border-radius: 10px;
+    background: var(--color-saffron-soft);
+    color: var(--color-saffron-deep);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .vc__icon svg { width: 36px; height: 36px; }
+  .vc__cat {
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--color-saffron-deep);
+  }
+  .vc__name { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.01em; color: var(--color-ink); }
+  .vc__cap { font-size: 0.9rem; font-weight: 500; color: var(--color-ink-mute); margin-top: -8px; }
+  .vc__price {
+    padding-block: 14px;
+    border-top: 1px dashed rgba(26,24,21,0.18);
+    border-bottom: 1px dashed rgba(26,24,21,0.18);
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+    font-feature-settings: "tnum";
+  }
+  .vc__price strong { color: var(--color-ink); font-weight: 700; }
+  .vc__inc {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.84rem; color: var(--color-ink-mute);
+  }
+  .vc__inc::before {
+    content: "✓";
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--color-success-bg);
+    color: var(--color-success);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+  .annot {
+    flex: 1;
+    padding: 14px 18px;
+    background: var(--color-white-warm);
+    border-radius: 12px;
+    border: 1px solid rgba(26,24,21,0.08);
+    font-size: 0.82rem;
+    color: var(--color-ink-soft);
+    line-height: 1.5;
+  }
+  .annot b { color: var(--color-saffron-deep); font-weight: 700; }
+  .annot ol { margin: 8px 0 0; padding-left: 18px; }
+  .annot li { margin-bottom: 4px; }
+  .wrap { display: flex; gap: 18px; align-items: stretch; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Vehicle card — “with driver” surfaced 3 ways</span>
+  <div class="wrap">
+    <article class="vc">
+      <div class="vc__icon">
+        <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 21h28M7 21l2-8h18l2 8M10 21v3a1 1 0 001 1h2a1 1 0 001-1v-3M22 21v3a1 1 0 001 1h2a1 1 0 001-1v-3M10 16.5h.5M25.5 16.5h.5M14 13v-2"/>
+        </svg>
+      </div>
+      <div>
+        <div class="vc__cat">Car with driver</div>
+        <div class="vc__name">Innova / Crysta</div>
+        <div class="vc__cap">Seats 6–7 + driver · premium SUV</div>
+      </div>
+      <div class="vc__price">From <strong>₹16/km</strong> · <strong>₹3,800</strong> / 8-hour</div>
+      <div class="vc__inc">Includes professional driver, fuel, AC</div>
+    </article>
+    <div class="annot">
+      <b>1.</b> Saffron eyebrow — <em>“CAR WITH DRIVER”</em><br>
+      <b>2.</b> Capacity line — <em>“Seats 6–7 + driver”</em><br>
+      <b>3.</b> Green-tick indicator — <em>“Includes professional driver, fuel, AC”</em>
+      <ol style="list-style: none; padding: 0; margin-top: 10px; color: var(--color-ink-mute);">
+        <li>· Vehicle silhouette in saffron line-art on saffron-soft tile</li>
+        <li>· Tabular numerals for prices (₹16/km, ₹3,800)</li>
+        <li>· Hairline dashed border around price strip</li>
+      </ol>
+    </div>
+  </div>
+</div>
+</body></html>

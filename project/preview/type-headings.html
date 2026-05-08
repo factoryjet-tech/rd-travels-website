@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding-block: 14px;
+    border-bottom: 1px solid rgba(26,24,21,0.08);
+    align-items: baseline;
+  }
+  .row:last-child { border-bottom: 0; }
+  .lbl {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .accent { color: var(--color-saffron-deep); font-weight: inherit; font-style: normal; }
+</style></head>
+<body>
+<div class="card">
+  <div class="row">
+    <div class="lbl">H1 · 800</div>
+    <div style="font-size: 2.4rem; font-weight: 800; letter-spacing: -0.025em; line-height: 1.05;">Cars, Tempo Travellers &amp; Buses, <span class="accent">with driver.</span></div>
+  </div>
+  <div class="row">
+    <div class="lbl">H2 · 700</div>
+    <div style="font-size: 1.7rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1;">From Ahmedabad to <span class="accent">anywhere in India.</span></div>
+  </div>
+  <div class="row">
+    <div class="lbl">H3 · 700</div>
+    <div style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.2;">Booking takes <span class="accent">3 steps</span> and 5 minutes.</div>
+  </div>
+  <div class="row">
+    <div class="lbl">H4 · 600</div>
+    <div style="font-size: 1.05rem; font-weight: 600; letter-spacing: -0.01em;">Toyota Innova Crysta</div>
+  </div>
+</div>
+</body></html>

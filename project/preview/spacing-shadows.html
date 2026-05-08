@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 32px 28px; background: var(--color-white-warm); }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .tile {
+    width: 100%;
+    height: 88px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(26,24,21,0.04);
+  }
+  .sm  { box-shadow: 0 1px 2px rgba(26,24,21,0.04); }
+  .md  { box-shadow: 0 4px 14px rgba(26,24,21,0.08); }
+  .lg  { box-shadow: 0 12px 36px rgba(26,24,21,0.10); }
+  .saf { box-shadow: 0 4px 14px rgba(232,119,34,0.18); }
+  .focus {
+    box-shadow: 0 0 0 4px rgba(232,119,34,0.20);
+  }
+  .name { font-size: 0.72rem; font-weight: 700; color: var(--color-ink); font-family: ui-monospace, monospace; text-align: center; }
+  .use { font-size: 0.7rem; color: var(--color-ink-mute); text-align: center; line-height: 1.35; max-width: 16ch; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Shadows — warm-tinted, never pure black</span>
+  <div class="row">
+    <div class="item"><div class="tile sm"></div><div class="name">--shadow-sm</div><div class="use">Resting elevation, booking bar</div></div>
+    <div class="item"><div class="tile md"></div><div class="name">--shadow-md</div><div class="use">Card hover state</div></div>
+    <div class="item"><div class="tile lg"></div><div class="name">--shadow-lg</div><div class="use">Modals, drawer (rare)</div></div>
+    <div class="item"><div class="tile saf"></div><div class="name">--shadow-saffron</div><div class="use">Saffron CTA hover only</div></div>
+    <div class="item"><div class="tile focus"></div><div class="name">--shadow-focus</div><div class="use">Focus ring, 4px saffron</div></div>
+  </div>
+</div>
+</body></html>

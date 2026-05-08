@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .panel {
+    background: var(--color-white-warm);
+    border: 1px solid rgba(26,24,21,0.08);
+    border-radius: 14px;
+    padding: 22px 26px;
+  }
+  table { width: 100%; border-collapse: collapse; font-feature-settings: "tnum"; }
+  th, td { text-align: left; padding: 10px 12px; font-size: 0.95rem; }
+  th { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-mute); }
+  td { color: var(--color-ink-soft); border-top: 1px solid rgba(26,24,21,0.08); }
+  td.r { text-align: right; font-weight: 700; color: var(--color-ink); }
+  td.veh { font-weight: 600; color: var(--color-ink); }
+  .lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--color-ink-mute); margin-bottom: 10px; display: inline-block; }
+</style></head>
+<body>
+<div class="panel">
+  <span class="lbl">Tabular numerals — prices align cleanly</span>
+  <table>
+    <thead>
+      <tr>
+        <th>Vehicle</th>
+        <th style="text-align:right;">Per-km outstation</th>
+        <th style="text-align:right;">8-hour package</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="veh">Sedan · Dzire</td><td class="r">₹11/km</td><td class="r">₹2,400</td></tr>
+      <tr><td class="veh">Innova Crysta</td><td class="r">₹16/km</td><td class="r">₹3,800</td></tr>
+      <tr><td class="veh">12-seater Tempo</td><td class="r">₹24/km</td><td class="r">₹6,500</td></tr>
+      <tr><td class="veh">26-seater Maharaja</td><td class="r">₹32/km</td><td class="r">₹11,000</td></tr>
+      <tr><td class="veh">56-seater Volvo</td><td class="r">₹70/km</td><td class="r">₹22,000</td></tr>
+    </tbody>
+  </table>
+</div>
+</body></html>

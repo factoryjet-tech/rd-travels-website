@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw {
+    border-radius: 10px;
+    height: 130px;
+    padding: 14px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sw__name { font-size: 0.78rem; font-weight: 700; }
+  .sw__hex  { font-size: 0.72rem; font-weight: 500; font-family: ui-monospace, monospace; opacity: 0.85; }
+  .sw__use  { font-size: 0.72rem; font-weight: 500; line-height: 1.35; opacity: 0.85; margin-top: 6px; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Ink — warm near-black (NEVER pure #000)</span>
+  <div class="swatches">
+    <div class="sw" style="background: var(--color-ink);">
+      <div><div class="sw__name">--color-ink</div><div class="sw__hex">#1A1815</div></div>
+      <div class="sw__use">Primary text, headlines</div>
+    </div>
+    <div class="sw" style="background: var(--color-ink-soft);">
+      <div><div class="sw__name">--color-ink-soft</div><div class="sw__hex">#4A4640</div></div>
+      <div class="sw__use">Body paragraphs, lead</div>
+    </div>
+    <div class="sw" style="background: var(--color-ink-mute);">
+      <div><div class="sw__name">--color-ink-mute</div><div class="sw__hex">#7A746A</div></div>
+      <div class="sw__use">Captions, meta, inactive</div>
+    </div>
+    <div class="sw" style="background: var(--color-ink-deep);">
+      <div><div class="sw__name">--color-ink-deep</div><div class="sw__hex">#0F0E0C</div></div>
+      <div class="sw__use">Footer background, deep CTA bands</div>
+    </div>
+  </div>
+</div>
+</body></html>

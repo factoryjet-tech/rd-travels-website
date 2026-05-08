@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .sw {
+    border-radius: 10px;
+    height: 130px;
+    padding: 14px;
+    border: 1px solid rgba(26,24,21,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sw__name { font-size: 0.78rem; font-weight: 700; }
+  .sw__hex  { font-size: 0.72rem; font-weight: 500; font-family: ui-monospace, monospace; opacity: 0.85; }
+  .sw__use  { font-size: 0.72rem; font-weight: 500; line-height: 1.35; opacity: 0.85; margin-top: 6px; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">White & surfaces — the dominant 70%</span>
+  <div class="swatches">
+    <div class="sw" style="background: var(--color-white); color: var(--color-ink);">
+      <div><div class="sw__name">--color-white</div><div class="sw__hex">#FFFFFF</div></div>
+      <div class="sw__use">Main page background, card surfaces</div>
+    </div>
+    <div class="sw" style="background: var(--color-white-warm); color: var(--color-ink);">
+      <div><div class="sw__name">--color-white-warm</div><div class="sw__hex">#FBFAF7</div></div>
+      <div class="sw__use">Alternate band background, subtle elevation</div>
+    </div>
+    <div class="sw" style="background: var(--color-surface-soft); color: var(--color-ink);">
+      <div><div class="sw__name">--color-surface-soft</div><div class="sw__hex">#F5F2EC</div></div>
+      <div class="sw__use">Footer band, table stripes</div>
+    </div>
+  </div>
+</div>
+</body></html>

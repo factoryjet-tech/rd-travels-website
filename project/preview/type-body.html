@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 24px;
+    padding-block: 14px;
+    border-bottom: 1px solid rgba(26,24,21,0.08);
+    align-items: baseline;
+  }
+  .row:last-child { border-bottom: 0; }
+  .lbl {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .lead { font-size: 1.15rem; font-weight: 400; line-height: 1.55; color: var(--color-ink-soft); }
+  .body { font-size: 1rem; font-weight: 400; line-height: 1.65; color: var(--color-ink-soft); }
+  .small { font-size: 0.9rem; font-weight: 400; line-height: 1.6; color: var(--color-ink-soft); }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-saffron-deep);
+  }
+  .caption { font-size: 0.85rem; font-weight: 500; color: var(--color-ink-mute); }
+</style></head>
+<body>
+<div class="card">
+  <div class="row">
+    <div class="lbl">Lead · 400</div>
+    <div class="lead">Sedans for airport drops, Tempo Travellers for family tours, 56-seater Volvos for weddings.</div>
+  </div>
+  <div class="row">
+    <div class="lbl">Body · 400</div>
+    <div class="body">Tourist Permit, AITP, valid PUC and fitness on every vehicle. Drivers are police-verified, employed, and trained on highway protocol.</div>
+  </div>
+  <div class="row">
+    <div class="lbl">Body sm · 400</div>
+    <div class="small">Per-km rates apply outside Ahmedabad municipal limits. 8-hour packages cover up to 80 km within the city.</div>
+  </div>
+  <div class="row">
+    <div class="lbl">Eyebrow · 600</div>
+    <div class="eyebrow">Most-booked routes</div>
+  </div>
+  <div class="row">
+    <div class="lbl">Caption · 500</div>
+    <div class="caption">No spam. No advance to enquire. GST-clear pricing.</div>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px 32px; }
+  .row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding-block: 6px;
+  }
+  .lbl {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .sample {
+    font-family: var(--font-sans);
+    font-size: 1.55rem;
+    color: var(--color-ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  .meta {
+    font-size: 0.78rem;
+    color: var(--color-ink-mute);
+    margin-top: 4px;
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Switzer — Fontshare CDN, weights 200 → 800</span>
+  <p style="margin:0 0 18px;font-size:0.9rem;color:var(--color-ink-soft);max-width:60ch;">Neo-grotesque sans by Jeremie Hornus, published by Indian Type Foundry (ITF), Ahmedabad.</p>
+  <div>
+    <div class="row"><span class="lbl">200 ExtraLight</span><span class="sample" style="font-weight:200">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">300 Light</span><span class="sample" style="font-weight:300">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">400 Regular</span><span class="sample" style="font-weight:400">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">500 Medium</span><span class="sample" style="font-weight:500">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">600 SemiBold</span><span class="sample" style="font-weight:600">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">700 Bold</span><span class="sample" style="font-weight:700">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+    <div class="row"><span class="lbl">800 ExtraBold</span><span class="sample" style="font-weight:800">Cars, Tempo Travellers &amp; Buses, with driver.</span></div>
+  </div>
+  <p class="meta" style="margin: 6px 0 0;">Self-hosted from <code>fonts/</code> — italics available 200–800, used only inside accent quotes (never in headings).</p>
+</div>
+</body></html>

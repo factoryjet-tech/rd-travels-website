@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .tile {
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    min-height: 130px;
+  }
+  .light { background: #fff; border: 1px solid rgba(26,24,21,0.08); }
+  .dark { background: var(--color-ink-deep); }
+  .mono {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--color-saffron);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.8rem;
+    letter-spacing: -0.02em;
+    font-family: var(--font-sans);
+  }
+  .word {
+    font-family: var(--font-sans);
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .word--light { color: var(--color-ink); }
+  .word--dark { color: #fff; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Logo lockup — light & dark contexts</span>
+  <div class="row">
+    <div class="tile light">
+      <div class="mono">R</div>
+      <div class="word word--light">RD Travels</div>
+    </div>
+    <div class="tile dark">
+      <div class="mono">R</div>
+      <div class="word word--dark">RD Travels</div>
+    </div>
+  </div>
+</div>
+</body></html>

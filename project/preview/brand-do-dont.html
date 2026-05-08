@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .col {
+    border-radius: 14px;
+    padding: 18px 22px;
+    border: 1px solid;
+  }
+  .do { background: var(--color-success-bg); border-color: var(--color-success); }
+  .dont { background: #fbe9e8; border-color: #d97a72; }
+  .col h4 {
+    margin: 0 0 12px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .do h4 { color: var(--color-success); }
+  .dont h4 { color: var(--color-error); }
+  .col ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    line-height: 1.55;
+  }
+  .col li { margin-bottom: 4px; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Do &amp; don't — the drift the model always tries to make</span>
+  <div class="row">
+    <div class="col do">
+      <h4>Do</h4>
+      <ul>
+        <li>White surfaces dominate (70%); saffron punctuates (30%)</li>
+        <li>One family — Switzer, weight contrast for hierarchy</li>
+        <li>Saffron <em>color</em> on accent phrase — not italic, not serif</li>
+        <li>Every vehicle says "with driver"</li>
+        <li>Tabular numerals on prices (₹11/km, ₹2,400)</li>
+        <li>Verb-object button labels ("Get instant quote")</li>
+        <li>Hairline dividers, warm-tinted shadows</li>
+      </ul>
+    </div>
+    <div class="col dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>Editorial luxury (Mr &amp; Mrs Smith, Fraunces, italic flourishes)</li>
+        <li>Aggregator UI (yellow CTAs, "999 happy customers")</li>
+        <li>AI-startup defaults (Inter, purple gradients, glassmorphism)</li>
+        <li>Stock travel photography (sunsets, drone shots)</li>
+        <li>Pure black text — always use --color-ink</li>
+        <li>"Submit" / "Click here" / "Learn more" buttons</li>
+        <li>Saffron as a large background block (it's spice, not the meal)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</body></html>

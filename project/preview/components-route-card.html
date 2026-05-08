@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .rc {
+    position: relative;
+    background: #fff;
+    border: 1px solid rgba(26,24,21,0.08);
+    border-radius: 16px;
+    padding: 22px;
+  }
+  .rc__num {
+    position: absolute;
+    top: 18px; right: 22px;
+    font-size: 2.4rem; font-weight: 200;
+    letter-spacing: -0.04em; line-height: 1;
+    color: var(--color-saffron);
+    font-feature-settings: "lnum";
+  }
+  .rc__name {
+    font-size: 1.1rem; font-weight: 700;
+    letter-spacing: -0.015em; line-height: 1.2;
+    padding-right: 60px;
+    color: var(--color-ink);
+  }
+  .rc__meta {
+    margin: 10px 0 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(26,24,21,0.18);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--color-ink-mute);
+  }
+  .rc__price {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-saffron-deep);
+    font-feature-settings: "tnum";
+    margin-bottom: 10px;
+  }
+  .rc__desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+    margin: 0;
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Route card — decorative numeral + tabular price</span>
+  <div class="row">
+    <article class="rc">
+      <div class="rc__num">01</div>
+      <h3 class="rc__name">Mumbai International Airport</h3>
+      <div class="rc__meta">525 km · 9–10 hrs · One-way / round</div>
+      <div class="rc__price">From ₹6,800 one-way (sedan)</div>
+      <p class="rc__desc">Ahmedabad to BOM Terminal 2, NH 48 via Vadodara. Departures plotted backwards from your boarding time.</p>
+    </article>
+    <article class="rc">
+      <div class="rc__num">02</div>
+      <h3 class="rc__name">Statue of Unity</h3>
+      <div class="rc__meta">200 km · 4 hrs · Day trip</div>
+      <div class="rc__price">From ₹4,200 round-trip (sedan)</div>
+      <p class="rc__desc">Day-trip to Kevadia. We time the drive so you reach before the laser show and avoid the parking queue.</p>
+    </article>
+  </div>
+</div>
+</body></html>

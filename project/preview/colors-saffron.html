@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .sw {
+    border-radius: 10px;
+    height: 130px;
+    padding: 14px;
+    border: 1px solid rgba(26,24,21,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .sw__name { font-size: 0.75rem; font-weight: 700; letter-spacing: -0.005em; }
+  .sw__hex  { font-size: 0.72rem; font-weight: 500; font-family: ui-monospace, monospace; opacity: 0.85; }
+  .sw__use  { font-size: 0.7rem; font-weight: 500; line-height: 1.35; opacity: 0.85; margin-top: 6px; }
+</style></head>
+<body>
+<div class="card">
+  <div>
+    <span class="label">Saffron — the brand accent (30%)</span>
+  </div>
+  <div class="swatches">
+    <div class="sw" style="background: var(--color-saffron); color: #fff;">
+      <div><div class="sw__name">--color-saffron</div><div class="sw__hex">#E87722</div></div>
+      <div class="sw__use">CTAs, brand fingerprint</div>
+    </div>
+    <div class="sw" style="background: var(--color-saffron-deep); color: #fff;">
+      <div><div class="sw__name">--color-saffron-deep</div><div class="sw__hex">#C45F1A</div></div>
+      <div class="sw__use">Saffron text on white (AA), hover</div>
+    </div>
+    <div class="sw" style="background: var(--color-saffron-soft); color: var(--color-saffron-dark);">
+      <div><div class="sw__name">--color-saffron-soft</div><div class="sw__hex">#FFE9D5</div></div>
+      <div class="sw__use">Icon backgrounds, badge fills</div>
+    </div>
+    <div class="sw" style="background: var(--color-saffron-50); color: var(--color-saffron-dark);">
+      <div><div class="sw__name">--color-saffron-50</div><div class="sw__hex">#FEF6E8</div></div>
+      <div class="sw__use">Subtle hover tints</div>
+    </div>
+  </div>
+</div>
+</body></html>

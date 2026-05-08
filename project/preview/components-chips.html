@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 32px 28px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--color-white-warm);
+    border: 1px solid rgba(26,24,21,0.08);
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-ink-soft);
+  }
+  .chip::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-saffron);
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Trust chips — hero + footer credentials strip</span>
+  <div class="row">
+    <span class="chip">10+ years</span>
+    <span class="chip">Tourist Permit + AITP</span>
+    <span class="chip">Owned fleet · employed drivers</span>
+    <span class="chip">GST-clear pricing</span>
+    <span class="chip">24×7 active-trip support</span>
+    <span class="chip">Pan-India routes</span>
+  </div>
+</div>
+</body></html>

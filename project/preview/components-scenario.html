@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .list { display: flex; flex-direction: column; gap: 10px; }
+  .sc {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 18px;
+    background: #fff;
+    border: 1px solid rgba(26,24,21,0.08);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--color-ink);
+  }
+  .sc__icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-saffron-soft);
+    color: var(--color-saffron-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sc__icon svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .sc__title { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; margin: 0; }
+  .sc__sub { font-size: 0.85rem; color: var(--color-ink-mute); margin: 2px 0 0; }
+  .sc__arrow { margin-left: auto; color: var(--color-ink-mute); font-size: 1.1rem; }
+  .sc--hover { background: var(--color-saffron-50); border-color: var(--color-saffron); transform: translateY(-2px); box-shadow: 0 4px 14px rgba(26,24,21,0.08); }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Scenario cards — saffron line-icons (unified vocabulary)</span>
+  <div class="list">
+    <a href="#" class="sc sc--hover">
+      <span class="sc__icon"><svg viewBox="0 0 24 24"><path d="M22 16.5l-4-2-7 5-2-1 4-5L4 11l-1.5-1L4 9l9 1 4-5 2 .5-1.5 4.5 5 2-.5 1.5L22 16.5z"/></svg></span>
+      <div>
+        <h4 class="sc__title">Mumbai Airport drop</h4>
+        <p class="sc__sub">Sedan or Innova · 9–10 hours</p>
+      </div>
+      <span class="sc__arrow">→</span>
+    </a>
+    <a href="#" class="sc">
+      <span class="sc__icon"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21v-9M19 21v-9M5 12h14M5 12l7-5 7 5M9 21v-5a3 3 0 016 0v5M12 7V4M10 4h4"/></svg></span>
+      <div>
+        <h4 class="sc__title">Somnath–Dwarka pilgrimage</h4>
+        <p class="sc__sub">Tempo or Innova · 3–4 days</p>
+      </div>
+      <span class="sc__arrow">→</span>
+    </a>
+    <a href="#" class="sc">
+      <span class="sc__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="15" r="6"/><path d="M9 9l3-5 3 5M10.5 6.5h3"/></svg></span>
+      <div>
+        <h4 class="sc__title">Wedding transport</h4>
+        <p class="sc__sub">Bridal car + band bus + family Tempos</p>
+      </div>
+      <span class="sc__arrow">→</span>
+    </a>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 24px 28px; }
+  .row {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 24px;
+    padding-block: 14px;
+    border-bottom: 1px solid rgba(26,24,21,0.08);
+    align-items: baseline;
+  }
+  .row:last-child { border-bottom: 0; }
+  .lbl {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .ex {
+    font-size: 0.95rem;
+    color: var(--color-ink);
+    font-weight: 500;
+  }
+  .ex em {
+    font-style: normal;
+    color: var(--color-ink-mute);
+    font-size: 0.78rem;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Voice in UI — verb + object, never generic</span>
+  <div class="row"><div class="lbl">Buttons</div><div class="ex">"Get instant quote" · "WhatsApp us your trip" · "Book Mumbai airport drop" <em>not "Submit", not "Learn more"</em></div></div>
+  <div class="row"><div class="lbl">Eyebrows</div><div class="ex">"WHY DIRECT" · "OUR FLEET" · "MOST-BOOKED ROUTES" · "SINCE 2015"</div></div>
+  <div class="row"><div class="lbl">Empty state</div><div class="ex">"No quotes yet — WhatsApp us, most go out in 15 minutes."</div></div>
+  <div class="row"><div class="lbl">Error</div><div class="ex">"That phone number doesn't look right. Indian numbers start with 6, 7, 8, or 9."</div></div>
+  <div class="row"><div class="lbl">Loading</div><div class="ex">"Sending to WhatsApp…" <em>not "Magic happening!"</em></div></div>
+  <div class="row"><div class="lbl">Microcopy</div><div class="ex">"No spam. No advance to enquire. GST-clear pricing."</div></div>
+</div>
+</body></html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: flex; align-items: center; gap: 36px; }
+  .num {
+    font-size: 5.5rem;
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: var(--color-saffron);
+    font-feature-settings: "lnum";
+  }
+  .meta { display: flex; flex-direction: column; gap: 4px; }
+  .meta .lbl {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-mute);
+  }
+  .meta .ttl { font-size: 1.05rem; font-weight: 700; color: var(--color-ink); }
+  .meta .desc { font-size: 0.92rem; line-height: 1.5; color: var(--color-ink-soft); max-width: 38ch; }
+  .examples { display: flex; gap: 22px; align-items: baseline; padding: 16px 0 0; border-top: 1px dashed rgba(26,24,21,0.18); margin-top: 8px; }
+  .examples .num-sm {
+    font-size: 2.4rem;
+    font-weight: 200;
+    letter-spacing: -0.04em;
+    color: var(--color-saffron);
+    font-feature-settings: "lnum";
+  }
+</style></head>
+<body>
+<div class="card">
+  <div class="row">
+    <div class="num">01</div>
+    <div class="meta">
+      <span class="lbl">Decorative numeral</span>
+      <span class="ttl">Switzer · 200 · saffron</span>
+      <span class="desc">Used on route cards, pillars, step numbers. Thinness creates lightness; saffron is the warm punctuation.</span>
+    </div>
+  </div>
+  <div class="examples">
+    <span class="num-sm">01</span>
+    <span class="num-sm">02</span>
+    <span class="num-sm">03</span>
+    <span class="num-sm">04</span>
+    <span class="num-sm">05</span>
+    <span class="num-sm">06</span>
+  </div>
+</div>
+</body></html>

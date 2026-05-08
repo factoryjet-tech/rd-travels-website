@@ -1,0 +1,265 @@
+/* =============================================================
+   RD TRAVELS — COLOR + TYPE FOUNDATIONS
+   The canonical token layer. Import once, use everywhere.
+
+   Ratio:    White (70%) + Saffron (30%) — non-negotiable.
+   Family:   Switzer (single family, weights 200–800; via Fontshare CDN)
+   Ink:      #1A1815 warm near-black — NEVER pure #000.
+   ============================================================= */
+
+/* Switzer — Fontshare CDN (https://www.fontshare.com/fonts/switzer)
+   Neo-grotesque sans by Jeremie Hornus, published by Indian Type Foundry (ITF), Ahmedabad.
+   Free for commercial use under ITF Free Font License (https://www.fontshare.com/licenses/itf-ffl).
+   Weights 200, 300, 400, 500, 600, 700, 800 + italic 400/600. */
+@import url('https://api.fontshare.com/v2/css?f[]=switzer@200,300,400,500,600,700,800,401,601&display=swap');
+
+:root {
+  /* ---------- COLOR — base palette ---------- */
+  /* White & surfaces (70%) */
+  --color-white:         #ffffff;
+  --color-white-warm:    #fbfaf7;       /* alternate band background */
+  --color-surface-soft:  #f5f2ec;       /* footer band, table stripe */
+  --color-border:        rgba(26, 24, 21, 0.08);
+  --color-border-strong: rgba(26, 24, 21, 0.18);
+
+  /* Saffron (30%) */
+  --color-saffron-50:    #fef6e8;       /* very subtle hover/selected tint */
+  --color-saffron-soft:  #ffe9d5;       /* badge fills, soft icon backgrounds */
+  --color-saffron-100:   #fbe5c2;
+  --color-saffron-200:   #f4c977;
+  --color-saffron:       #e87722;       /* PRIMARY brand saffron — CTAs, accents */
+  --color-saffron-deep:  #c45f1a;       /* saffron text on white (passes WCAG AA) */
+  --color-saffron-dark:  #8c3f11;       /* saffron text on light saffron fills */
+
+  /* Ink — warm near-black (NEVER pure black) */
+  --color-ink:           #1a1815;       /* primary text, headlines */
+  --color-ink-soft:      #4a4640;       /* body paragraphs, lead */
+  --color-ink-mute:      #7a746a;       /* captions, meta, inactive */
+  --color-ink-deep:      #0f0e0c;       /* footer background, deep CTA bands */
+
+  /* Semantic — used sparingly */
+  --color-whatsapp:      #1f6f3f;       /* WhatsApp CTAs only */
+  --color-whatsapp-deep: #155a30;
+  --color-success:       #1f6f3f;
+  --color-success-bg:    #e1f0e5;
+  --color-error:         #a3322a;
+
+  /* ---------- COLOR — semantic aliases ---------- */
+  --bg:           var(--color-white);
+  --bg-alt:       var(--color-white-warm);
+  --bg-deep:      var(--color-ink-deep);
+  --fg1:          var(--color-ink);          /* h1–h4, primary text */
+  --fg2:          var(--color-ink-soft);     /* body, lead */
+  --fg3:          var(--color-ink-mute);     /* caption, meta, inactive */
+  --accent:       var(--color-saffron);      /* CTAs, brand fingerprint */
+  --accent-text:  var(--color-saffron-deep); /* saffron text on white */
+  --accent-soft:  var(--color-saffron-soft); /* badge / icon backgrounds */
+  --link:         var(--color-saffron-deep);
+
+  /* ---------- TYPOGRAPHY — family ---------- */
+  --font-sans: 'Switzer', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  /* No serif. No display family. No mono in product UI.
+     Hierarchy comes from weight, size, color, tracking only. */
+
+  /* ---------- TYPOGRAPHY — role tokens (use as font shorthand) ---------- */
+  /* H1 — Display hero */
+  --type-h1-size:    clamp(2.5rem, 5.5vw, 4.5rem);
+  --type-h1-weight:  800;
+  --type-h1-track:   -0.025em;
+  --type-h1-leading: 1.05;
+
+  /* H2 — Section */
+  --type-h2-size:    clamp(2rem, 4vw, 3rem);
+  --type-h2-weight:  700;
+  --type-h2-track:   -0.02em;
+  --type-h2-leading: 1.1;
+
+  /* H3 — Subsection */
+  --type-h3-size:    clamp(1.4rem, 2.5vw, 1.75rem);
+  --type-h3-weight:  700;
+  --type-h3-track:   -0.015em;
+  --type-h3-leading: 1.2;
+
+  /* H4 — Card title */
+  --type-h4-size:    1.15rem;
+  --type-h4-weight:  600;
+  --type-h4-track:   -0.01em;
+  --type-h4-leading: 1.3;
+
+  /* Lead — Intro paragraph */
+  --type-lead-size:    clamp(1.1rem, 1.5vw, 1.3rem);
+  --type-lead-weight:  400;
+  --type-lead-leading: 1.55;
+
+  /* Body */
+  --type-body-size:    1rem;
+  --type-body-weight:  400;
+  --type-body-leading: 1.65;
+
+  /* Body small */
+  --type-body-sm-size:    0.9rem;
+  --type-body-sm-weight:  400;
+  --type-body-sm-leading: 1.6;
+
+  /* Eyebrow — section label */
+  --type-eyebrow-size:    0.8rem;
+  --type-eyebrow-weight:  600;
+  --type-eyebrow-track:   0.16em;
+  --type-eyebrow-leading: 1;
+
+  /* Caption / meta */
+  --type-caption-size:    0.85rem;
+  --type-caption-weight:  500;
+  --type-caption-leading: 1.4;
+
+  /* Button */
+  --type-btn-size:    0.95rem;
+  --type-btn-weight:  600;
+  --type-btn-leading: 1;
+
+  /* Decorative numeral — saffron, weight 200 */
+  --type-numeral-size:    2.4rem;
+  --type-numeral-weight:  200;
+  --type-numeral-track:   -0.04em;
+  --type-numeral-leading: 1;
+
+  /* ---------- SPACING (8pt scale) ---------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  24px;
+  --space-6:  32px;
+  --space-7:  48px;
+  --space-8:  64px;
+  --space-9:  96px;
+  --space-10: 128px;
+
+  /* ---------- LAYOUT ---------- */
+  --max-width:        1200px;
+  --max-width-prose:  720px;
+  --container-pad:    clamp(20px, 4vw, 32px);
+
+  /* ---------- RADIUS ---------- */
+  --radius-sm:   4px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 999px;
+
+  /* ---------- SHADOWS — warm-tinted, never pure black ---------- */
+  --shadow-sm:      0 1px 2px rgba(26, 24, 21, 0.04);
+  --shadow-md:      0 4px 14px rgba(26, 24, 21, 0.08);
+  --shadow-lg:      0 12px 36px rgba(26, 24, 21, 0.10);
+  --shadow-saffron: 0 4px 14px rgba(232, 119, 34, 0.18);   /* CTA hover */
+  --shadow-focus:   0 0 0 4px rgba(232, 119, 34, 0.20);    /* focus ring */
+
+  /* ---------- MOTION ---------- */
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 0.25s;
+  --dur-med:  0.3s;
+  --dur-slow: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =============================================================
+   BASE — apply the family + tabular numerals globally
+   ============================================================= */
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--type-body-size);
+  font-weight: var(--type-body-weight);
+  line-height: var(--type-body-leading);
+  color: var(--fg1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "tnum";   /* tabular numerals on by default */
+}
+
+/* =============================================================
+   TYPE — semantic styles (h1–h4, lead, body, eyebrow, etc.)
+   ============================================================= */
+h1, h2, h3, h4 { margin: 0; color: var(--fg1); font-family: var(--font-sans); }
+
+h1, .h1 {
+  font-size: var(--type-h1-size);
+  font-weight: var(--type-h1-weight);
+  letter-spacing: var(--type-h1-track);
+  line-height: var(--type-h1-leading);
+}
+h2, .h2 {
+  font-size: var(--type-h2-size);
+  font-weight: var(--type-h2-weight);
+  letter-spacing: var(--type-h2-track);
+  line-height: var(--type-h2-leading);
+}
+h3, .h3 {
+  font-size: var(--type-h3-size);
+  font-weight: var(--type-h3-weight);
+  letter-spacing: var(--type-h3-track);
+  line-height: var(--type-h3-leading);
+}
+h4, .h4 {
+  font-size: var(--type-h4-size);
+  font-weight: var(--type-h4-weight);
+  letter-spacing: var(--type-h4-track);
+  line-height: var(--type-h4-leading);
+}
+
+.lead {
+  font-size: var(--type-lead-size);
+  font-weight: var(--type-lead-weight);
+  line-height: var(--type-lead-leading);
+  color: var(--fg2);
+}
+
+p { margin: 0 0 1em; color: var(--fg2); }
+
+.eyebrow {
+  font-size: var(--type-eyebrow-size);
+  font-weight: var(--type-eyebrow-weight);
+  letter-spacing: var(--type-eyebrow-track);
+  line-height: var(--type-eyebrow-leading);
+  text-transform: uppercase;
+  color: var(--accent-text);
+  display: inline-block;
+}
+
+.caption {
+  font-size: var(--type-caption-size);
+  font-weight: var(--type-caption-weight);
+  line-height: var(--type-caption-leading);
+  color: var(--fg3);
+}
+
+/* THE SIGNATURE: saffron accent phrase in headlines.
+   Color is the entire flourish. NO italic. NO serif. NO weight change. */
+.accent {
+  color: var(--accent-text);
+  font-weight: inherit;
+  font-style: normal;
+  font-family: inherit;
+}
+
+/* Decorative numerals — Switzer 200, saffron */
+.numeral {
+  font-size: var(--type-numeral-size);
+  font-weight: var(--type-numeral-weight);
+  letter-spacing: var(--type-numeral-track);
+  line-height: var(--type-numeral-leading);
+  color: var(--accent);
+  font-feature-settings: "lnum";
+}
+.numeral--lg { font-size: 3.5rem; }
+
+/* Tabular numerals helper (for prices, distances) */
+.tnum { font-feature-settings: "tnum"; }

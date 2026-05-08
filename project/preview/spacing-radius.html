@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"><link rel="stylesheet" href="_shared.css">
+<style>
+  body { padding: 28px; }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .shape {
+    width: 100%;
+    height: 84px;
+    background: var(--color-saffron-soft);
+    border: 1.5px solid var(--color-saffron-deep);
+  }
+  .name { font-size: 0.72rem; font-weight: 700; color: var(--color-ink); font-family: ui-monospace, monospace; }
+  .val { font-size: 0.7rem; color: var(--color-ink-mute); font-family: ui-monospace, monospace; }
+  .use { font-size: 0.7rem; color: var(--color-ink-mute); text-align: center; line-height: 1.35; max-width: 14ch; }
+</style></head>
+<body>
+<div class="card">
+  <span class="label">Radius — 4 / 10 / 16 / 24 / 999</span>
+  <div class="row">
+    <div class="item">
+      <div class="shape" style="border-radius: 4px;"></div>
+      <div class="name">--radius-sm</div><div class="val">4px</div>
+      <div class="use">Form inputs, chips</div>
+    </div>
+    <div class="item">
+      <div class="shape" style="border-radius: 10px;"></div>
+      <div class="name">--radius-md</div><div class="val">10px</div>
+      <div class="use">Standard buttons, secondary cards</div>
+    </div>
+    <div class="item">
+      <div class="shape" style="border-radius: 16px;"></div>
+      <div class="name">--radius-lg</div><div class="val">16px</div>
+      <div class="use">Vehicle, route, scenario cards</div>
+    </div>
+    <div class="item">
+      <div class="shape" style="border-radius: 24px;"></div>
+      <div class="name">--radius-xl</div><div class="val">24px</div>
+      <div class="use">Hero panels, feature blocks</div>
+    </div>
+    <div class="item">
+      <div class="shape" style="border-radius: 999px;"></div>
+      <div class="name">--radius-pill</div><div class="val">999px</div>
+      <div class="use">Primary CTAs, trust chips</div>
+    </div>
+  </div>
+</div>
+</body></html>

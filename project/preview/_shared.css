@@ -1,0 +1,29 @@
+/* Shared shell for design-system preview cards. Each card is ~700×var px.
+   No outer titles or framing — content goes directly. */
+@import url('../colors_and_type.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-white);
+  color: var(--color-ink);
+}
+body {
+  padding: 28px 32px;
+  font-family: var(--font-sans);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.stack { display: flex; flex-direction: column; }
+.label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ink-mute);
+}
+.tnum { font-feature-settings: "tnum"; }
