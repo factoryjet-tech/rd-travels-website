@@ -1,27 +1,59 @@
 // RDB Travels — Header / Nav
 const Header = ({ active = "home", onNavigate }) => {
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const handleNavigate = (id) => {
+    setMenuOpen(false);
+    onNavigate && onNavigate(id);
+  };
+
   const link = (id, label) => (
     <a
       href="#"
       className="nav__link"
       aria-current={active === id ? "page" : undefined}
-      onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(id); }}
+      onClick={(e) => { e.preventDefault(); handleNavigate(id); }}
     >{label}</a>
   );
+
+  // Close menu on outside click
+  React.useEffect(() => {
+    if (!menuOpen) return;
+    const close = (e) => { if (!e.target.closest(".nav__inner")) setMenuOpen(false); };
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, [menuOpen]);
+
   return (
     <header className="nav">
       <div className="container nav__inner">
-        <a href="#" className="brand" onClick={(e)=>{e.preventDefault(); onNavigate && onNavigate("home");}}>
+        <a href="#" className="brand" onClick={(e)=>{e.preventDefault(); handleNavigate("home");}}>
           <span>RDB Travels</span>
         </a>
-        <nav className="nav__links" aria-label="Primary">
+        <nav className={`nav__links${menuOpen ? " nav__links--open" : ""}`} aria-label="Primary">
           {link("home", "Home")}
           {link("about", "About")}
           {link("contact", "Contact")}
-          <a href="#" className="btn btn-whatsapp" style={{ padding: "10px 18px", fontSize: "0.9rem" }}>
+          <a
+            href="https://wa.me/919876543210?text=Hi%20RDB%20Travels%2C%20I%27d%20like%20a%20quote%20for..."
+            className="btn btn-whatsapp"
+            style={{ padding: "10px 18px", fontSize: "0.9rem" }}
+            target="_blank" rel="noopener noreferrer"
+          >
             <WhatsAppIcon /> WhatsApp
           </a>
         </nav>
+        <button
+          className={`nav__hamburger${menuOpen ? " nav__hamburger--open" : ""}`}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={menuOpen}
+          aria-controls="primary-nav"
+          onClick={() => setMenuOpen(o => !o)}
+        >
+          <span className="nav__hamburger__line" aria-hidden="true"></span>
+          <span className="nav__hamburger__line" aria-hidden="true"></span>
+          <span className="nav__hamburger__line" aria-hidden="true"></span>
+        </button>
       </div>
     </header>
   );

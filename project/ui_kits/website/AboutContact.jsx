@@ -110,6 +110,11 @@ const FounderPortraitCard = () => {
           src="public/images/ronak-portrait-fleet.webp"
           alt="Ronak Dineshbhai Barot, founder of RDB Travels, Ahmedabad"
           className="about-portrait-card__img"
+          width="1066"
+          height="1600"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
         />
         <div className="about-portrait-card__badge">
           <span className="about-portrait-card__badge-dot" aria-hidden="true" />

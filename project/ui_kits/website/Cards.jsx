@@ -5,7 +5,7 @@ const Chip = ({ children }) => <span className="chip">{children}</span>;
 const VehicleCard = ({ icon, image, altText, category, name, capacity, desc, perKm, package: pkg, ctaLabel }) => (
   <article className="vehicle-card">
     {image
-      ? <div className="vehicle-card__photo"><img src={image} alt={altText || name} loading="lazy" /></div>
+      ? <div className="vehicle-card__photo"><img src={image} alt={altText || name} loading="lazy" width="600" height="400" decoding="async" /></div>
       : <div className="vehicle-card__icon">{icon}</div>
     }
     <div>
@@ -74,13 +74,26 @@ const CredentialCard = ({ title, body }) => (
 
 const FaqItem = ({ q, a, defaultOpen = false }) => {
   const [open, setOpen] = React.useState(defaultOpen);
+  const id = React.useId ? React.useId() : Math.random().toString(36).slice(2);
   return (
     <div className="faq-item">
-      <div className="faq-item__q" onClick={() => setOpen(o => !o)} style={{ cursor: "pointer" }}>
+      <button
+        className="faq-item__q"
+        aria-expanded={open}
+        aria-controls={`faq-answer-${id}`}
+        onClick={() => setOpen(o => !o)}
+      >
         <span>{q}</span>
-        <span className="faq-item__icon">{open ? "−" : "+"}</span>
+        <span className="faq-item__icon" aria-hidden="true">{open ? "−" : "+"}</span>
+      </button>
+      <div
+        id={`faq-answer-${id}`}
+        role="region"
+        aria-labelledby={`faq-btn-${id}`}
+        hidden={!open}
+      >
+        <p className="faq-item__a">{a}</p>
       </div>
-      {open && <p className="faq-item__a">{a}</p>}
     </div>
   );
 };

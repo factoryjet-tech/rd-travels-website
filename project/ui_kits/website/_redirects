@@ -1,0 +1,4 @@
+# Redirect old domain if needed
+# https://rd-travels-website.pages.dev/* https://rdbtravels.in/:splat 301
+
+# Clean URL support (already handled by Cloudflare Pages)
