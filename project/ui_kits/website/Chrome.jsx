@@ -12,7 +12,7 @@ const Header = ({ active = "home", onNavigate }) => {
     <header className="nav">
       <div className="container nav__inner">
         <a href="#" className="brand" onClick={(e)=>{e.preventDefault(); onNavigate && onNavigate("home");}}>
-          <span className="brand__monogram">RDB</span>
+          <span className="brand__monogram">R</span>
           <span>RDB Travels</span>
         </a>
         <nav className="nav__links" aria-label="Primary">
@@ -46,7 +46,7 @@ const Footer = () => (
       <div className="footer__grid">
         <div className="footer__brand">
           <a href="#" className="brand" style={{ color: "var(--color-white)" }}>
-            <span className="brand__monogram">RDB</span>
+            <span className="brand__monogram">R</span>
             <span style={{ color: "var(--color-white)" }}>RDB Travels</span>
           </a>
           <p style={{ margin: "var(--space-4) 0 0", color: "rgba(255,255,255,0.7)", fontSize: "0.95rem", maxWidth: "36ch" }}>
