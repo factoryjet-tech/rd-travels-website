@@ -2086,3 +2086,220 @@ button:focus-visible {
 .skip-to-content:focus {
   top: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CALL BUTTON
+   ═══════════════════════════════════════════════════════════════════════════ */
+.btn-call {
+  background: transparent;
+  color: var(--color-saffron-deep);
+  border-color: var(--color-saffron);
+}
+.btn-call:hover,
+.btn-call:focus-visible {
+  background: var(--color-saffron);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-saffron);
+}
+
+/* ─── Nav CTA group (WhatsApp + Call side by side in nav) ─────────────────── */
+.nav__cta-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.nav__btn {
+  padding: 9px 15px;
+  font-size: 0.875rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   QUOTE MODAL
+   ═══════════════════════════════════════════════════════════════════════════ */
+.qmodal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: qmodal-fade-in 0.2s var(--ease-out);
+}
+@keyframes qmodal-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.qmodal {
+  position: relative;
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-8);
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.22);
+  animation: qmodal-slide-up 0.25s var(--ease-out);
+}
+@keyframes qmodal-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.qmodal__close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-border);
+  background: transparent;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-ink-mute);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+}
+.qmodal__close:hover {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.qmodal__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-saffron);
+  margin: 0 0 var(--space-2);
+}
+.qmodal__title {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-3);
+  line-height: 1.15;
+}
+.qmodal__sub {
+  font-size: 0.9rem;
+  color: var(--color-ink-mute);
+  margin: 0 0 var(--space-6);
+  line-height: 1.6;
+}
+
+/* ─── Form ────────────────────────────────────────────────────────────────── */
+.qmodal__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.qmodal__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.qmodal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.qmodal__field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: 0.02em;
+}
+.qmodal__field label span {
+  font-weight: 400;
+  color: var(--color-ink-mute);
+}
+.qmodal__field input,
+.qmodal__field select,
+.qmodal__field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  background: var(--color-white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.qmodal__field input::placeholder,
+.qmodal__field select::placeholder {
+  color: var(--color-ink-mute);
+}
+.qmodal__field input:focus,
+.qmodal__field select:focus {
+  outline: none;
+  border-color: var(--color-saffron);
+  box-shadow: 0 0 0 3px rgba(232, 119, 34, 0.15);
+}
+.qmodal__field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+.qmodal__actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+.qmodal__actions .btn {
+  flex: 1;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.qmodal__trust {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--color-ink-mute);
+  margin: var(--space-5) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ─── Mobile modal adjustments ────────────────────────────────────────────── */
+@media (max-width: 540px) {
+  .qmodal {
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    max-height: 92vh;
+  }
+  .qmodal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+  .qmodal__row {
+    grid-template-columns: 1fr;
+  }
+  .qmodal__actions .btn {
+    min-width: 0;
+  }
+}
+
+/* ─── Mobile: hide Call btn in nav (only show on desktop) ─────────────────── */
+@media (max-width: 768px) {
+  .nav__call { display: none; }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { WhatsAppIcon, PlaneIcon, TempleIcon, RingIcon, BuildingIcon } from './Icons.jsx';
+import { WhatsAppIcon, PlaneIcon, TempleIcon, RingIcon, BuildingIcon, PhoneIcon } from './Icons.jsx';
+import { openQuoteModal } from './Chrome.jsx';
 import { ScenarioCard, Chip, Pillar, ChannelCard, CredentialCard } from './Cards.jsx';
 
 // RDB Travels — About page
@@ -192,7 +193,7 @@ const AboutPage = () => (
             </AboutReveal>
             <AboutReveal delay={0.2}>
               <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-                <a href="#" className="btn btn-whatsapp"><WhatsAppIcon /> WhatsApp for a quote</a>
+                <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp for a quote</button>
                 <a href="#" className="btn btn-outline">Call +91 [PHONE]</a>
               </div>
             </AboutReveal>
@@ -361,7 +362,7 @@ const AboutPage = () => (
           back in 15 minutes — GST-itemised, no advance to enquire.
         </p>
         <div style={{ display: "flex", gap: "var(--space-3)", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="#" className="btn btn-whatsapp"><WhatsAppIcon /> WhatsApp us your trip</a>
+          <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us your trip</button>
           <a href="#" className="btn" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)" }}>
             Call +91 [PHONE]
           </a>
@@ -475,7 +476,7 @@ const QuoteForm = () => {
       <Field label="Email (optional)" placeholder="you@example.com" help="Only if you want a GST invoice copy." />
       <div style={{ gridColumn: "1 / -1", display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginTop: "var(--space-2)" }}>
         <button className="btn btn-primary" type="submit">Get instant quote</button>
-        <a href="#" className="btn btn-whatsapp"><WhatsAppIcon /> WhatsApp instead</a>
+        <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp instead</button>
       </div>
       <p style={{ gridColumn: "1 / -1", fontSize: "0.82rem", color: "var(--color-ink-mute)", margin: 0 }}>
         No spam. No advance to enquire. GST-clear pricing.

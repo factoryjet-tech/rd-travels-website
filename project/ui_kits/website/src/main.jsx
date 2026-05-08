@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Header, MobileCtaBar, Footer } from '../Chrome.jsx';
+import { Header, MobileCtaBar, Footer, QuoteModal } from '../Chrome.jsx';
 import { HomePage } from '../HomePage.jsx';
 import { AboutPage, ContactPage } from '../AboutContact.jsx';
 
@@ -45,8 +45,9 @@ const App = () => {
         {page === "about"   && <AboutPage />}
         {page === "contact" && <ContactPage />}
       </main>
-      <Footer />
+      <Footer onNavigate={setPage} />
       <MobileCtaBar />
+      <QuoteModal />
     </>
   );
 };

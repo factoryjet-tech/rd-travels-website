@@ -1,5 +1,6 @@
 import React from 'react';
-import { WhatsAppIcon } from './Icons.jsx';
+import { WhatsAppIcon, PhoneIcon } from './Icons.jsx';
+import { openQuoteModal } from './Chrome.jsx';
 import { Chip, VehicleCard, RouteCard, FaqItem, Pillar } from './Cards.jsx';
 
 // RDB Travels — Home page
@@ -163,8 +164,8 @@ const HomePage = ({ onNavigate }) => (
 
             <HomeReveal delay={0.2}>
               <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-                <a href="#" className="btn btn-whatsapp"><WhatsAppIcon /> WhatsApp us your trip</a>
-                <a href="#" className="btn btn-outline">Call +91 [PHONE]</a>
+                <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us your trip</button>
+                <a href="tel:+919876543210" className="btn btn-call"><PhoneIcon /> Call +91 98765 43210</a>
               </div>
             </HomeReveal>
 
@@ -424,9 +425,9 @@ const HomePage = ({ onNavigate }) => (
           No advance to enquire — paperwork only after you've seen the GST-itemised number.
         </p>
         <div style={{ display: "flex", gap: "var(--space-3)", justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="#" className="btn btn-whatsapp"><WhatsAppIcon /> WhatsApp us</a>
-          <a href="#" className="btn" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)" }}>
-            Call +91 98765 43210
+          <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us</button>
+          <a href="tel:+919876543210" className="btn btn-call" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)", borderColor: "var(--color-saffron)" }}>
+            <PhoneIcon /> Call +91 98765 43210
           </a>
         </div>
       </div>
