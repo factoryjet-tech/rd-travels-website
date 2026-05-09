@@ -123,14 +123,34 @@ const QuoteModal = () => {
   );
 };
 
+// ── Nav data ──────────────────────────────────────────────────────────────────
+const NAV_SERVICES = [
+  { label: "Tempo Traveller Hire", href: "tempo-traveller-hire-ahmedabad.html" },
+  { label: "Bus with Driver",      href: "bus-hire-ahmedabad.html" },
+];
+const NAV_ROUTES = [
+  { label: "Ahmedabad → Mumbai",    href: "routes/ahmedabad-to-mumbai.html" },
+  { label: "Ahmedabad → Surat",     href: "routes/ahmedabad-to-surat.html" },
+  { label: "Ahmedabad → Vadodara",  href: "routes/ahmedabad-to-vadodara.html" },
+  { label: "Ahmedabad → Rajasthan", href: "routes/ahmedabad-to-rajasthan.html" },
+  { label: "Ahmedabad → Pune",      href: "routes/ahmedabad-to-pune.html" },
+  { label: "Ahmedabad → Rajkot",    href: "routes/ahmedabad-to-rajkot.html" },
+  { label: "Ahmedabad → Bhuj",      href: "routes/ahmedabad-to-bhuj.html" },
+  { label: "Ahmedabad → Nashik",    href: "routes/ahmedabad-to-nashik.html" },
+];
+
 // ── Header / Nav ──────────────────────────────────────────────────────────────
 const Header = ({ active = "home", onNavigate }) => {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [openDrop, setOpenDrop] = React.useState(null); // "services" | "routes" | null
 
   const handleNavigate = (id) => {
     setMenuOpen(false);
+    setOpenDrop(null);
     onNavigate && onNavigate(id);
   };
+
+  const toggleDrop = (name) => setOpenDrop(d => d === name ? null : name);
 
   const link = (id, label) => (
     <a href="#" className="nav__link"
@@ -141,7 +161,7 @@ const Header = ({ active = "home", onNavigate }) => {
 
   React.useEffect(() => {
     if (!menuOpen) return;
-    const close = (e) => { if (!e.target.closest(".nav__inner")) setMenuOpen(false); };
+    const close = (e) => { if (!e.target.closest(".nav__inner")) { setMenuOpen(false); setOpenDrop(null); } };
     document.addEventListener("click", close);
     return () => document.removeEventListener("click", close);
   }, [menuOpen]);
@@ -154,6 +174,31 @@ const Header = ({ active = "home", onNavigate }) => {
         </a>
         <nav className={`nav__links${menuOpen ? " nav__links--open" : ""}`} aria-label="Primary">
           {link("home", "Home")}
+
+          {/* Services dropdown */}
+          <div className={`nav__dropdown-wrap${openDrop === "services" ? " is-open" : ""}`}>
+            <button className="nav__link nav__dropdown-toggle" aria-haspopup="true" aria-expanded={openDrop === "services"} onClick={() => toggleDrop("services")}>
+              Services <span className="nav__caret">▾</span>
+            </button>
+            <div className="nav__dropdown-panel">
+              {NAV_SERVICES.map(item => (
+                <a key={item.href} className="nav__dropdown-item" href={item.href}>{item.label}</a>
+              ))}
+            </div>
+          </div>
+
+          {/* Routes dropdown */}
+          <div className={`nav__dropdown-wrap${openDrop === "routes" ? " is-open" : ""}`}>
+            <button className="nav__link nav__dropdown-toggle" aria-haspopup="true" aria-expanded={openDrop === "routes"} onClick={() => toggleDrop("routes")}>
+              Routes <span className="nav__caret">▾</span>
+            </button>
+            <div className="nav__dropdown-panel">
+              {NAV_ROUTES.map(item => (
+                <a key={item.href} className="nav__dropdown-item" href={item.href}>{item.label}</a>
+              ))}
+            </div>
+          </div>
+
           {link("about", "About")}
           {link("contact", "Contact")}
           <div className="nav__cta-group">
@@ -199,32 +244,46 @@ const Footer = ({ onNavigate }) => (
     <div className="container">
       <div className="footer__grid">
         <div className="footer__brand">
-          <a href="#" className="brand" style={{ color: "var(--color-white)" }}>
+          <a href="#" className="brand" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }} style={{ color: "var(--color-white)" }}>
             <span style={{ color: "var(--color-white)" }}>RDB Travels</span>
           </a>
           <p style={{ margin: "var(--space-4) 0 0", color: "rgba(255,255,255,0.7)", fontSize: "0.95rem", maxWidth: "36ch" }}>
             Ahmedabad's direct travels operator since 2015. Cars, Tempo Travellers, and buses with driver. Vetted owner-driver network, transparent prices, no brokers.
           </p>
+          <p style={{ margin: "var(--space-3) 0 0", color: "rgba(255,255,255,0.45)", fontSize: "0.82rem", lineHeight: 1.5 }}>
+            Founded 2015 · Ahmedabad, Gujarat<br />Ronak Dineshbhai Barot, proprietor
+          </p>
         </div>
         <div>
-          <p className="footer__col-title">Explore</p>
+          <p className="footer__col-title">Services</p>
+          <ul className="footer__list">
+            <li><a href="tempo-traveller-hire-ahmedabad.html">Tempo Traveller Hire</a></li>
+            <li><a href="bus-hire-ahmedabad.html">Bus with Driver (26–56 seat)</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }}>Car Rental Ahmedabad</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }}>Outstation Cab Booking</a></li>
+          </ul>
+          <p className="footer__col-title" style={{ marginTop: "var(--space-6)" }}>Quick Links</p>
           <ul className="footer__list">
             <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }}>Home</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("about"); }}>About</a></li>
+            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("about"); }}>About Us</a></li>
             <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("contact"); }}>Contact</a></li>
           </ul>
         </div>
         <div>
-          <p className="footer__col-title">Top routes</p>
+          <p className="footer__col-title">Popular Routes</p>
           <ul className="footer__list">
             <li><a href="routes/ahmedabad-to-mumbai.html">Ahmedabad → Mumbai</a></li>
-            <li><a href="routes/ahmedabad-to-rajasthan.html">Ahmedabad → Rajasthan</a></li>
             <li><a href="routes/ahmedabad-to-surat.html">Ahmedabad → Surat</a></li>
             <li><a href="routes/ahmedabad-to-vadodara.html">Ahmedabad → Vadodara</a></li>
+            <li><a href="routes/ahmedabad-to-rajasthan.html">Ahmedabad → Rajasthan</a></li>
+            <li><a href="routes/ahmedabad-to-pune.html">Ahmedabad → Pune</a></li>
+            <li><a href="routes/ahmedabad-to-rajkot.html">Ahmedabad → Rajkot</a></li>
+            <li><a href="routes/ahmedabad-to-bhuj.html">Ahmedabad → Bhuj / Kutch</a></li>
+            <li><a href="routes/ahmedabad-to-nashik.html">Ahmedabad → Nashik</a></li>
           </ul>
         </div>
         <div>
-          <p className="footer__col-title">Get in touch</p>
+          <p className="footer__col-title">Get in Touch</p>
           <ul className="footer__list">
             <li>
               <button onClick={openQuoteModal}
