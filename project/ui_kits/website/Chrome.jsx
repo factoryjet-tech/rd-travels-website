@@ -1,10 +1,13 @@
 import React from 'react';
 import { WhatsAppIcon, PhoneIcon } from './Icons.jsx';
 
-// ── Contact constants (replaced in one command when live numbers are ready) ───
-const PHONE_RAW  = "919876543210";   // E.164 without +
-const PHONE_DISP = "+91 98765 43210";
+// ── Contact constants ─────────────────────────────────────────────────────────
+const WA_RAW     = "917021055109";   // WhatsApp number (E.164 without +)
+const WA_DISP    = "+91 70210 55109";
+const PHONE_RAW  = "919213612377";   // Call number (E.164 without +)
+const PHONE_DISP = "+91 92136 12377";
 const EMAIL      = "hello@rdbtravels.in";
+const ADDRESS    = "A/501, Rajvi Elegance, Nikol, Ahmedabad – 382350";
 
 // ── Global quote trigger (call from any component) ────────────────────────────
 export const openQuoteModal = () =>
@@ -47,7 +50,7 @@ const QuoteModal = () => {
       `Route / Requirement: ${form.route}`,
       form.vehicle ? `Vehicle: ${form.vehicle}` : "",
     ].filter(Boolean).join("\n");
-    window.open(`https://wa.me/${PHONE_RAW}?text=${encodeURIComponent(msg)}`, "_blank");
+    window.open(`https://wa.me/${WA_RAW}?text=${encodeURIComponent(msg)}`, "_blank");
     close();
   };
 
@@ -74,7 +77,7 @@ const QuoteModal = () => {
             </div>
             <div className="qmodal__field">
               <label htmlFor="qm-phone">Mobile number</label>
-              <input id="qm-phone" type="tel" placeholder="+91 98765 43210"
+              <input id="qm-phone" type="tel" placeholder="+91 XXXXX XXXXX"
                 value={form.phone} onChange={set("phone")} required autoComplete="tel" />
             </div>
           </div>
@@ -205,9 +208,9 @@ const Header = ({ active = "home", onNavigate }) => {
           {link("about", "About")}
           {link("contact", "Contact")}
           <div className="nav__cta-group">
-            <button className="btn btn-whatsapp nav__btn" onClick={openQuoteModal}>
+            <a href={`https://wa.me/${WA_RAW}`} className="btn btn-whatsapp nav__btn" target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon /> WhatsApp
-            </button>
+            </a>
             <a href={`tel:+${PHONE_RAW}`} className="btn btn-call nav__btn">
               <PhoneIcon /> Call
             </a>
@@ -232,9 +235,9 @@ const Header = ({ active = "home", onNavigate }) => {
 // ── Mobile sticky CTA bar ─────────────────────────────────────────────────────
 const MobileCtaBar = () => (
   <div className="mobile-cta">
-    <button className="btn btn-whatsapp" style={{ flex: 1, justifyContent: "center" }} onClick={openQuoteModal}>
+    <a href={`https://wa.me/${WA_RAW}`} className="btn btn-whatsapp" style={{ flex: 1, justifyContent: "center" }} target="_blank" rel="noopener noreferrer">
       <WhatsAppIcon /> WhatsApp us
-    </button>
+    </a>
     <a href={`tel:+${PHONE_RAW}`} className="btn btn-call" style={{ flex: 1, justifyContent: "center" }}>
       <PhoneIcon /> Call now
     </a>
@@ -289,15 +292,10 @@ const Footer = ({ onNavigate }) => (
         <div>
           <p className="footer__col-title">Get in Touch</p>
           <ul className="footer__list">
-            <li>
-              <button onClick={openQuoteModal}
-                style={{ background:"none",border:"none",color:"rgba(255,255,255,0.85)",cursor:"pointer",padding:0,font:"inherit",textDecoration:"underline" }}>
-                WhatsApp {PHONE_DISP}
-              </button>
-            </li>
+            <li><a href={`https://wa.me/${WA_RAW}`} target="_blank" rel="noopener noreferrer">WhatsApp {WA_DISP}</a></li>
             <li><a href={`tel:+${PHONE_RAW}`}>Call {PHONE_DISP}</a></li>
             <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
-            <li style={{ color: "rgba(255,255,255,0.7)" }}>Ahmedabad, Gujarat 380001</li>
+            <li style={{ color: "rgba(255,255,255,0.7)" }}>{ADDRESS}</li>
           </ul>
         </div>
       </div>
