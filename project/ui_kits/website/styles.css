@@ -13,7 +13,8 @@
   /* White + surfaces (the dominant 70%) */
   --color-white:        #ffffff;
   --color-white-warm:   #fbfaf7;       /* alternate band background */
-  --color-surface-soft: #f5f2ec;       /* footer band, table stripe, deep content */
+  --color-surface-soft: #f5f2ec;
+  --color-surface:      #ffffff;       /* neutral section background (WCAG-safe) */       /* footer band, table stripe, deep content */
   --color-border:       rgba(26, 24, 21, 0.08);
   --color-border-strong:rgba(26, 24, 21, 0.18);
 
@@ -29,7 +30,7 @@
   /* Ink (warm near-black, NEVER pure black) */
   --color-ink:          #1a1815;       /* primary text, headlines */
   --color-ink-soft:     #4a4640;       /* body paragraphs, lead */
-  --color-ink-mute:     #7a746a;       /* captions, meta */
+  --color-ink-mute:     #6a6460;       /* captions, meta */
   --color-ink-deep:     #0f0e0c;       /* footer background, deep CTA bands */
 
   /* Semantic */
@@ -2271,8 +2272,8 @@ button:focus-visible {
    ═══════════════════════════════════════════════════════════════════════════ */
 .btn-call {
   background: transparent;
-  color: var(--color-saffron-deep);
-  border-color: var(--color-saffron);
+  color: var(--color-saffron-dark);
+  border-color: var(--color-saffron-deep);
 }
 .btn-call:hover,
 .btn-call:focus-visible {
