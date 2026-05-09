@@ -4,33 +4,51 @@
   <!-- ── Core pages ────────────────────────────────────────────────── -->
   <url>
     <loc>https://rdbtravels.in/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/about</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/contact</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- ── Service pages ─────────────────────────────────────────────── -->
   <url>
-    <loc>https://rdbtravels.in/routes/tempo-traveller-hire-ahmedabad</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://rdbtravels.in/car-rental-ahmedabad</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://rdbtravels.in/routes/bus-hire-ahmedabad</loc>
-    <lastmod>2026-05-08</lastmod>
+    <loc>https://rdbtravels.in/tempo-traveller-hire-ahmedabad</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rdbtravels.in/bus-hire-ahmedabad</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rdbtravels.in/airport-transfer-ahmedabad</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://rdbtravels.in/outstation-cab-ahmedabad</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -38,49 +56,49 @@
   <!-- ── Route pages ───────────────────────────────────────────────── -->
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-mumbai</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-rajasthan</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-surat</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-vadodara</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-rajkot</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-bhuj</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-pune</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://rdbtravels.in/routes/ahmedabad-to-nashik</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
