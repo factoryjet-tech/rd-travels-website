@@ -125,8 +125,11 @@ const QuoteModal = () => {
 
 // ── Nav data ──────────────────────────────────────────────────────────────────
 const NAV_SERVICES = [
-  { label: "Tempo Traveller Hire", href: "tempo-traveller-hire-ahmedabad.html" },
-  { label: "Bus with Driver",      href: "bus-hire-ahmedabad.html" },
+  { label: "Car Rental Ahmedabad",  href: "car-rental-ahmedabad.html" },
+  { label: "Tempo Traveller Hire",  href: "tempo-traveller-hire-ahmedabad.html" },
+  { label: "Bus with Driver",       href: "bus-hire-ahmedabad.html" },
+  { label: "Airport Transfer",      href: "airport-transfer-ahmedabad.html" },
+  { label: "Outstation Cab",        href: "outstation-cab-ahmedabad.html" },
 ];
 const NAV_ROUTES = [
   { label: "Ahmedabad → Mumbai",    href: "routes/ahmedabad-to-mumbai.html" },
@@ -257,10 +260,11 @@ const Footer = ({ onNavigate }) => (
         <div>
           <p className="footer__col-title">Services</p>
           <ul className="footer__list">
+            <li><a href="car-rental-ahmedabad.html">Car Rental Ahmedabad</a></li>
             <li><a href="tempo-traveller-hire-ahmedabad.html">Tempo Traveller Hire</a></li>
             <li><a href="bus-hire-ahmedabad.html">Bus with Driver (26–56 seat)</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }}>Car Rental Ahmedabad</a></li>
-            <li><a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate("home"); }}>Outstation Cab Booking</a></li>
+            <li><a href="airport-transfer-ahmedabad.html">Airport Transfer AMD</a></li>
+            <li><a href="outstation-cab-ahmedabad.html">Outstation Cab Booking</a></li>
           </ul>
           <p className="footer__col-title" style={{ marginTop: "var(--space-6)" }}>Quick Links</p>
           <ul className="footer__list">
