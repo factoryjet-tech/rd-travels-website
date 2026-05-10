@@ -13,6 +13,35 @@ const ADDRESS    = "A/501, Rajvi Elegance, Nikol, Ahmedabad – 382350";
 export const openQuoteModal = () =>
   window.dispatchEvent(new CustomEvent("rdb:openQuote"));
 
+// ── Call dropdown (two numbers) ───────────────────────────────────────────────
+const CallMenu = ({ btnClass = "btn btn-call nav__btn", style }) => {
+  const [open, setOpen] = React.useState(false);
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    if (!open) return;
+    const close = (e) => { if (ref.current && !ref.current.contains(e.target)) setOpen(false); };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, [open]);
+  return (
+    <div className="call-menu" ref={ref} style={{ position: "relative", ...style }}>
+      <button className={btnClass} onClick={() => setOpen(o => !o)} aria-haspopup="true" aria-expanded={open}>
+        <PhoneIcon /> Call <span className="nav__caret" aria-hidden="true">▾</span>
+      </button>
+      {open && (
+        <div className="call-menu__panel" role="menu">
+          <a href={`tel:+${WA_RAW}`} className="call-menu__item" role="menuitem" onClick={() => setOpen(false)}>
+            <PhoneIcon size={15} /> {WA_DISP}
+          </a>
+          <a href={`tel:+${PHONE_RAW}`} className="call-menu__item" role="menuitem" onClick={() => setOpen(false)}>
+            <PhoneIcon size={15} /> {PHONE_DISP}
+          </a>
+        </div>
+      )}
+    </div>
+  );
+};
+
 // ── Quote / Lead Modal ────────────────────────────────────────────────────────
 const QuoteModal = () => {
   const [open, setOpen] = React.useState(false);
@@ -108,6 +137,9 @@ const QuoteModal = () => {
             <button type="submit" className="btn btn-whatsapp">
               <WhatsAppIcon size={18} /> Send on WhatsApp
             </button>
+            <a href={`tel:+${WA_RAW}`} className="btn btn-call">
+              <PhoneIcon size={18} /> Call {WA_DISP}
+            </a>
             <a href={`tel:+${PHONE_RAW}`} className="btn btn-call">
               <PhoneIcon size={18} /> Call {PHONE_DISP}
             </a>
@@ -211,9 +243,7 @@ const Header = ({ active = "home", onNavigate }) => {
             <a href={`https://wa.me/${WA_RAW}`} className="btn btn-whatsapp nav__btn" target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon /> WhatsApp
             </a>
-            <a href={`tel:+${PHONE_RAW}`} className="btn btn-call nav__btn">
-              <PhoneIcon /> Call
-            </a>
+            <CallMenu />
           </div>
         </nav>
         <button
@@ -238,9 +268,14 @@ const MobileCtaBar = () => (
     <a href={`https://wa.me/${WA_RAW}`} className="btn btn-whatsapp" style={{ flex: 1, justifyContent: "center" }} target="_blank" rel="noopener noreferrer">
       <WhatsAppIcon /> WhatsApp us
     </a>
-    <a href={`tel:+${PHONE_RAW}`} className="btn btn-call" style={{ flex: 1, justifyContent: "center" }}>
-      <PhoneIcon /> Call now
-    </a>
+    <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "0.35rem" }}>
+      <a href={`tel:+${WA_RAW}`} className="btn btn-call" style={{ justifyContent: "center", width: "100%" }}>
+        <PhoneIcon /> {WA_DISP}
+      </a>
+      <a href={`tel:+${PHONE_RAW}`} className="btn btn-call" style={{ justifyContent: "center", width: "100%" }}>
+        <PhoneIcon /> {PHONE_DISP}
+      </a>
+    </div>
   </div>
 );
 
@@ -293,6 +328,7 @@ const Footer = ({ onNavigate }) => (
           <p className="footer__col-title">Get in Touch</p>
           <ul className="footer__list">
             <li><a href={`https://wa.me/${WA_RAW}`} target="_blank" rel="noopener noreferrer">WhatsApp {WA_DISP}</a></li>
+            <li><a href={`tel:+${WA_RAW}`}>Call {WA_DISP}</a></li>
             <li><a href={`tel:+${PHONE_RAW}`}>Call {PHONE_DISP}</a></li>
             <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
             <li style={{ color: "rgba(255,255,255,0.7)" }}>{ADDRESS}</li>
