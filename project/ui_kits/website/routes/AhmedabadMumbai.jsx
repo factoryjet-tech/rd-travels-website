@@ -275,11 +275,11 @@ const AhmedabadMumbaiPage = () => (
 
             <Reveal delay={0.2}>
               <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
-                <a href="https://wa.me/919876543210" className="btn btn-whatsapp">
+                <a href="https://wa.me/917021055109" className="btn btn-whatsapp">
                   <WhatsAppIcon /> WhatsApp your trip
                 </a>
-                <a href="tel:+919876543210" className="btn btn-outline">
-                  Call +91 98765 43210
+                <a href="tel:+919213612377" className="btn btn-outline">
+                  Call +91 92136 12377
                 </a>
               </div>
             </Reveal>
@@ -602,11 +602,11 @@ const AhmedabadMumbaiPage = () => (
             GST-itemised quote in 15 minutes. No advance to enquire.
           </p>
           <div style={{ display: "flex", gap: "var(--space-3)", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="https://wa.me/919876543210" className="btn btn-whatsapp">
+            <a href="https://wa.me/917021055109" className="btn btn-whatsapp">
               <WhatsAppIcon /> WhatsApp us now
             </a>
             <a
-              href="tel:+919876543210"
+              href="tel:+919213612377"
               className="btn"
               style={{
                 background: "rgba(255,255,255,0.14)",
@@ -615,7 +615,7 @@ const AhmedabadMumbaiPage = () => (
                 backdropFilter: "blur(4px)",
               }}
             >
-              Call +91 98765 43210
+              Call +91 92136 12377
             </a>
           </div>
         </Reveal>

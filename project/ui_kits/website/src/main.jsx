@@ -15,7 +15,7 @@ const META = {
     desc:  "RDB Travels is Ahmedabad's direct car rental and outstation taxi operator since 2015. Founded by Ronak Dineshbhai Barot. Owned fleet, employed drivers, GST-clear pricing across Gujarat and pan-India."
   },
   contact: {
-    title: "Contact RDB Travels — Ahmedabad Cab Service & Car Rental | WhatsApp +91 98765 43210",
+    title: "Contact RDB Travels — Ahmedabad Cab Service & Car Rental | WhatsApp +91 70210 55109",
     desc:  "Contact RDB Travels for outstation taxi, car rental, Tempo Traveller hire, and bus with driver in Ahmedabad. WhatsApp for a quote in 15 minutes. Same direct operator since 2015."
   }
 };

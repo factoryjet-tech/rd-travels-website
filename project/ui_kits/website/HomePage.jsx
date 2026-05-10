@@ -250,7 +250,7 @@ const HomePage = ({ onNavigate }) => (
             <HomeReveal delay={0.2}>
               <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
                 <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us your trip</button>
-                <a href="tel:+919876543210" className="btn btn-call"><PhoneIcon /> Call +91 98765 43210</a>
+                <a href="tel:+919213612377" className="btn btn-call"><PhoneIcon /> Call +91 92136 12377</a>
               </div>
             </HomeReveal>
 
@@ -467,8 +467,8 @@ const HomePage = ({ onNavigate }) => (
         </p>
         <div style={{ display: "flex", gap: "var(--space-3)", justifyContent: "center", flexWrap: "wrap" }}>
           <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us</button>
-          <a href="tel:+919876543210" className="btn btn-call" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)", borderColor: "var(--color-saffron)" }}>
-            <PhoneIcon /> Call +91 98765 43210
+          <a href="tel:+919213612377" className="btn btn-call" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)", borderColor: "var(--color-saffron)" }}>
+            <PhoneIcon /> Call +91 92136 12377
           </a>
         </div>
       </div>

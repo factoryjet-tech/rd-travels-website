@@ -421,18 +421,18 @@ const ContactPage = () => (
         <div className="grid-3" style={{ gap: "var(--space-5)" }}>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>WhatsApp</p>
-            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 98765 43210</p>
+            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 92136 12377</p>
             <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Quotes in 15 minutes</p>
           </div>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>Call</p>
-            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 98765 43210</p>
+            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 92136 12377</p>
             <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Mon–Sat · 8am to 9pm IST</p>
           </div>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>Office</p>
             <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>[OFFICE ADDRESS]</p>
-            <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Ahmedabad, Gujarat 380001</p>
+            <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>A/501, Rajvi Elegance, Nikol, Ahmedabad – 382350</p>
           </div>
         </div>
       </div>
