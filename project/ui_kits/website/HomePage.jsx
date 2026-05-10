@@ -22,7 +22,7 @@ const HOME_FAQ_DATA = {
   Fleet: [
     { q: "What's the largest vehicle you operate?", a: "56-seater Volvo Multi-Axle and Bharat Benz coaches for premium long-distance. We also run 45-seater AC coaches, 40-seater AC mini coaches, and 32-seater non-AC mini buses. Below that, the full Tempo Traveller range (9, 12, 17, 20, 26-seater Maharaja) and cars from Sedan to Innova Crysta." },
     { q: "How many people fit in a tempo traveller?", a: "Our Tempo Traveller range runs from 9-seater to 26-seater Maharaja. The standard 12-seater fits 12 passengers plus driver with luggage; the 17-seater is most-booked for extended families and corporate groups; the 26-seater Maharaja has push-back recliner seats and a larger luggage bay." },
-    { q: "Can I rent a car for a single day in Ahmedabad?", a: "Yes — 8-hour city packages and outstation one-way day trips are available. A sedan or Innova for a single day covers airport transfers, business meetings in Vadodara, or any in-city requirement. Package rates are on the fleet cards; WhatsApp for an exact quote based on your route." },
+    { q: "Can I rent a car for a single day in Ahmedabad?", a: "Yes — 8-hour city packages and outstation one-way day trips are available. A sedan or Innova for a single day covers airport transfers, business meetings in Vadodara, or any in-city requirement. WhatsApp for an exact quote based on your route and date." },
     { q: "What permits and insurance cover the vehicles?", a: "Every vehicle has a Tourist Vehicle Permit, All-India Tourist Permit (AITP) for inter-state travel, valid PUC and fitness, and comprehensive insurance covering passengers for the trip duration. Drivers are police-verified. Documentation available on request." },
   ],
   Trips: [
@@ -313,59 +313,51 @@ const HomePage = ({ onNavigate }) => (
             altText="Maruti Suzuki Dzire sedan with driver — for airport drops and business trips from Ahmedabad"
             category="Car with driver" name="Sedan (Dzire / Etios)"
             capacity="Seats 4 + driver"
-            desc="Comfortable for airport drops, business trips, small family outstation runs."
-            perKm="₹11/km" package="₹2,400" ctaLabel="Book a sedan" />
+            desc="Comfortable for airport drops, business trips, small family outstation runs." ctaLabel="Book a sedan" />
           <VehicleCard image="public/images/fleet/fleet-mpv-ertiga.webp"
             altText="Maruti Suzuki Ertiga 6-seater MPV with driver — family-friendly outstation choice from Ahmedabad"
             category="Car with driver" name="Maruti Ertiga"
             capacity="Seats 6 + driver"
-            desc="The family-friendly choice — extra space for luggage on multi-day Gujarat or Rajasthan trips."
-            perKm="₹13/km" package="₹3,000" ctaLabel="Book an Ertiga" />
+            desc="The family-friendly choice — extra space for luggage on multi-day Gujarat or Rajasthan trips." ctaLabel="Book an Ertiga" />
           <VehicleCard image="public/images/fleet/fleet-suv-innova.webp"
             altText="Toyota Innova / Innova Crysta SUV with driver — premium pick for long-distance and weddings"
             category="Car with driver" name="Toyota Innova / Crysta"
             capacity="Seats 6–7 + driver"
-            desc="Premium pick for long-distance comfort, executive transport, weddings, NRI family trips."
-            perKm="₹16/km" package="₹3,800" ctaLabel="Book an Innova" />
+            desc="Premium pick for long-distance comfort, executive transport, weddings, NRI family trips." ctaLabel="Book an Innova" />
           <VehicleCard image="public/images/fleet/fleet-tempo-12seater.webp"
             altText="12-seater tempo traveller with driver — for family tours and group outstation trips from Ahmedabad"
             category="Tempo Traveller with driver" name="12-seater Tempo Traveller"
             capacity="Seats 12 + driver"
-            desc="The workhorse for family tours, pilgrimage groups, school trips. AC, push-back seats, luggage space."
-            perKm="₹24/km" package="₹6,500" ctaLabel="See Tempo Traveller hire"
+            desc="The workhorse for family tours, pilgrimage groups, school trips. AC, push-back seats, luggage space." ctaLabel="See Tempo Traveller hire"
             ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-17seater.webp"
             altText="17-seater tempo traveller with driver — extended families, corporate groups, college trips"
             category="Tempo Traveller with driver" name="17-seater Tempo Traveller"
             capacity="Seats 17 + driver"
-            desc="Extended families, mid-size corporate groups, college trips. Same comfort, more capacity."
-            perKm="₹28/km" ctaLabel="See Tempo Traveller hire"
+            desc="Extended families, mid-size corporate groups, college trips. Same comfort, more capacity." ctaLabel="See Tempo Traveller hire"
             ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-tempo-26seater-maharaja.webp"
             altText="26-seater Maharaja tempo traveller with push-back recliners and AC — premium group travel"
             category="Tempo Traveller with driver" name="26-seater Maharaja Tempo"
             capacity="Seats 26 + driver"
-            desc="Premium group travel — push-back recliners, AC, large luggage area. Wedding parties, premium tours."
-            perKm="₹32/km" ctaLabel="See Tempo Traveller hire"
+            desc="Premium group travel — push-back recliners, AC, large luggage area. Wedding parties, premium tours." ctaLabel="See Tempo Traveller hire"
             ctaHref="tempo-traveller-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-32seater-mini.webp"
             altText="32-seater mini bus with driver — school trips, mid-size weddings, corporate offsites"
             category="Bus with driver" name="32-seater Mini Bus"
             capacity="Seats 32 + driver"
-            desc="School trips, mid-size wedding parties, corporate offsites. AC and non-AC available."
-            perKm="₹40/km" ctaLabel="See bus hire options"
+            desc="School trips, mid-size wedding parties, corporate offsites. AC and non-AC available." ctaLabel="See bus hire options"
             ctaHref="bus-hire-ahmedabad.html" />
           <VehicleCard image="public/images/fleet/fleet-bus-56seater-volvo.webp"
             altText="56-seater Volvo multi-axle bus with driver — premium long-distance group travel and large pilgrimage groups"
             category="Bus with driver" name="56-seater Volvo Multi-Axle"
             capacity="Seats 56 + driver(s)"
-            desc="Premium long-distance group travel. Volvo and Bharat Benz options. Used for weddings, large pilgrimage groups, corporate events."
-            perKm="₹70/km" ctaLabel="See bus hire options"
+            desc="Premium long-distance group travel. Volvo and Bharat Benz options. Used for weddings, large pilgrimage groups, corporate events." ctaLabel="See bus hire options"
             ctaHref="bus-hire-ahmedabad.html" />
         </div>
         <p style={{ fontSize: "0.85rem", color: "var(--color-ink-mute)", marginTop: "var(--space-6)", maxWidth: "70ch" }}>
-          Prices are starting rates. Final quote includes GST and accounts for season, route, vehicle availability, and night-halt requirements.
-          Tolls, parking, and inter-state permits billed at actuals.
+          WhatsApp or call for an exact quote — GST-itemised, fixed rate, no hidden charges.
+          Tolls, parking, and inter-state permits billed at actuals with receipts.
         </p>
       </div>
     </section>

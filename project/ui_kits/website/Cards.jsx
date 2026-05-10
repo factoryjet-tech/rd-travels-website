@@ -4,7 +4,7 @@ import React from 'react';
 
 const Chip = ({ children }) => <span className="chip">{children}</span>;
 
-const VehicleCard = ({ icon, image, altText, category, name, capacity, desc, perKm, package: pkg, ctaLabel, ctaHref }) => (
+const VehicleCard = ({ icon, image, altText, category, name, capacity, desc, ctaLabel, ctaHref }) => (
   <article className="vehicle-card">
     {image
       ? <div className="vehicle-card__photo"><img src={image} alt={altText || name} loading="lazy" width="600" height="400" decoding="async" /></div>
@@ -16,10 +16,6 @@ const VehicleCard = ({ icon, image, altText, category, name, capacity, desc, per
       <div className="vehicle-card__capacity">{capacity}</div>
     </div>
     <p className="vehicle-card__desc">{desc}</p>
-    <div className="vehicle-card__price">
-      <span>From <strong>{perKm}</strong> outstation</span>
-      {pkg && <span><strong>{pkg}</strong> / 8-hour package</span>}
-    </div>
     <div className="vehicle-card__includes">Includes professional driver, fuel, AC</div>
     <a href={ctaHref || "#"} style={{ fontWeight: 600, color: "var(--color-ink)", textDecoration: "none", fontSize: "0.95rem" }}>
       {ctaLabel} <span className="arrow">→</span>

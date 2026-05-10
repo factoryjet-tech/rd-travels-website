@@ -394,7 +394,6 @@ const AhmedabadMumbaiPage = () => (
               name: "Sedan (Dzire / Etios)",
               capacity: "Seats 4 + driver",
               desc: "The workhorse of this route. Solo travellers, couples, small business trips. Comfortable on the highway, straightforward at BOM drop zones.",
-              perKm: "₹11/km",
               ctaLabel: "Book a sedan",
               delay: 0,
             },
@@ -405,7 +404,6 @@ const AhmedabadMumbaiPage = () => (
               name: "Maruti Ertiga",
               capacity: "Seats 6 + driver",
               desc: "More legroom and boot space than a sedan. Families of 4–5, mixed adult-child groups with luggage for a multi-day stay.",
-              perKm: "₹13/km",
               ctaLabel: "Book an Ertiga",
               delay: 0.07,
             },
@@ -416,7 +414,6 @@ const AhmedabadMumbaiPage = () => (
               name: "Toyota Innova / Crysta",
               capacity: "Seats 6–7 + driver",
               desc: "The premium pick for a 10-hour highway run. Reclining seats, highway AC, rear luggage space. Families, NRI visits, executive transfers.",
-              perKm: "₹16/km",
               ctaLabel: "Book an Innova",
               delay: 0.14,
             },
@@ -427,7 +424,6 @@ const AhmedabadMumbaiPage = () => (
               name: "12-seater Tempo Traveller",
               capacity: "Seats 12 + driver",
               desc: "Groups of 8–12. Extended family relocations, office offsites, friend groups. Split the cost — per-head rate often beats economy train.",
-              perKm: "₹24/km",
               ctaLabel: "Book a 12-seater",
               delay: 0.21,
             },
@@ -558,7 +554,7 @@ const AhmedabadMumbaiPage = () => (
         <Reveal delay={0.1}>
           <FaqItem defaultOpen
             q="How much does an Ahmedabad to Mumbai cab cost?"
-            a="Rates depend on vehicle class, travel date, and whether it's one-way or round-trip. A sedan one-way is priced per-km from ₹11; an Innova round-trip runs differently. NH 48 has 8–10 toll plazas billed at actuals and listed separately in your quote. WhatsApp your dates, vehicle preference, and pickup address — GST-itemised quote in about 15 minutes."
+            a="Rates depend on vehicle class, travel date, and whether it's one-way or round-trip. NH 48 has 8–10 toll plazas billed at actuals and listed separately in your quote. WhatsApp your dates, vehicle preference, and pickup address — GST-itemised quote in about 15 minutes."
           />
           <FaqItem
             q="When should I leave Ahmedabad for a morning flight?"
