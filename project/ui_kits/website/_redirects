@@ -1,4 +1,5 @@
-# Redirect old domain if needed
+# Redirect old Cloudflare preview domain to production
 # https://rd-travels-website.pages.dev/* https://rdbtravels.in/:splat 301
 
-# Clean URL support (already handled by Cloudflare Pages)
+# SPA fallback — serve index.html for all routes so React router handles /about, /contact, etc.
+/*    /index.html   200

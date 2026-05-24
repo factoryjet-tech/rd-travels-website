@@ -37,26 +37,38 @@ const RouteCard = ({ n, name, meta, price, desc, href }) => (
   </article>
 );
 
-const ScenarioCard = ({ icon, title, sub, onClick }) => (
-  <a href="#" className="scenario-card" onClick={(e) => { e.preventDefault(); onClick && onClick(); }}>
-    <span className="scenario-card__icon">{icon}</span>
-    <div>
-      <h4 className="scenario-card__title">{title}</h4>
-      <p className="scenario-card__sub">{sub}</p>
-    </div>
-    <span className="scenario-card__arrow">→</span>
-  </a>
+const ScenarioCard = ({ icon, title, sub, onClick, href }) => (
+  href
+    ? <a href={href} className="scenario-card">
+        <span className="scenario-card__icon">{icon}</span>
+        <div>
+          <h4 className="scenario-card__title">{title}</h4>
+          <p className="scenario-card__sub">{sub}</p>
+        </div>
+        <span className="scenario-card__arrow">→</span>
+      </a>
+    : <button type="button" className="scenario-card" onClick={onClick}>
+        <span className="scenario-card__icon">{icon}</span>
+        <div>
+          <h4 className="scenario-card__title">{title}</h4>
+          <p className="scenario-card__sub">{sub}</p>
+        </div>
+        <span className="scenario-card__arrow">→</span>
+      </button>
 );
 
 // Channel card — contact page (WhatsApp / Phone / Email)
-const ChannelCard = ({ icon, eyebrow, title, value, desc, ctaLabel, featured }) => (
+const ChannelCard = ({ icon, eyebrow, title, value, desc, ctaLabel, ctaHref, featured }) => (
   <article className={"channel-card" + (featured ? " channel-card--featured" : "")}>
     <div className="channel-card__icon">{icon}</div>
     <div className="channel-card__eyebrow">{eyebrow}</div>
     <h3 className="channel-card__title">{title}</h3>
     <div className="channel-card__value">{value}</div>
     <p className="channel-card__desc">{desc}</p>
-    <a href="#" className="channel-card__cta">{ctaLabel} <span className="arrow">→</span></a>
+    {ctaHref
+      ? <a href={ctaHref} className="channel-card__cta">{ctaLabel} <span className="arrow">→</span></a>
+      : <span className="channel-card__cta" aria-hidden="true">{ctaLabel} <span className="arrow">→</span></span>
+    }
   </article>
 );
 
@@ -73,10 +85,11 @@ const CredentialCard = ({ title, body }) => (
 
 const FaqItem = ({ q, a, defaultOpen = false }) => {
   const [open, setOpen] = React.useState(defaultOpen);
-  const id = React.useId ? React.useId() : Math.random().toString(36).slice(2);
+  const id = React.useId();
   return (
     <div className="faq-item">
       <button
+        id={`faq-btn-${id}`}
         className="faq-item__q"
         aria-expanded={open}
         aria-controls={`faq-answer-${id}`}

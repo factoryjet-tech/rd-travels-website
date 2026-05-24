@@ -162,7 +162,7 @@ const Timeline = () => {
 
 // ─── Page ──────────────────────────────────────────────────────────────────────
 const AboutPage = () => (
-  <main>
+  <>
 
     {/* ════════════════════════════════════════
         HERO
@@ -194,7 +194,7 @@ const AboutPage = () => (
             <AboutReveal delay={0.2}>
               <div style={{ display: "flex", gap: "var(--space-3)", flexWrap: "wrap", marginBottom: "var(--space-4)" }}>
                 <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp for a quote</button>
-                <a href="#" className="btn btn-outline">Call +91 [PHONE]</a>
+                <a href="tel:+919213612377" className="btn btn-outline"><PhoneIcon /> Call +91 92136 12377</a>
               </div>
             </AboutReveal>
             <AboutReveal delay={0.26}>
@@ -363,18 +363,18 @@ const AboutPage = () => (
         </p>
         <div style={{ display: "flex", gap: "var(--space-3)", justifyContent: "center", flexWrap: "wrap" }}>
           <button className="btn btn-whatsapp" onClick={openQuoteModal}><WhatsAppIcon /> WhatsApp us your trip</button>
-          <a href="#" className="btn" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)" }}>
-            Call +91 [PHONE]
+          <a href="tel:+919213612377" className="btn" style={{ background: "var(--color-white)", color: "var(--color-saffron-deep)" }}>
+            <PhoneIcon /> Call +91 92136 12377
           </a>
         </div>
       </div>
     </section>
-  </main>
+  </>
 );
 
 // RDB Travels — Contact page
 const ContactPage = () => (
-  <main>
+  <>
     <section className="section">
       <div className="container">
         <span className="eyebrow">Contact</span>
@@ -421,23 +421,23 @@ const ContactPage = () => (
         <div className="grid-3" style={{ gap: "var(--space-5)" }}>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>WhatsApp</p>
-            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 92136 12377</p>
+            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}><a href="https://wa.me/917021055109?text=Hi%20RDB%20Travels%2C%20I%27d%20like%20a%20quote%20for..." style={{ color: "inherit", textDecoration: "none" }}>+91 70210 55109</a></p>
             <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Quotes in 15 minutes</p>
           </div>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>Call</p>
-            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>+91 92136 12377</p>
+            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}><a href="tel:+919213612377" style={{ color: "inherit", textDecoration: "none" }}>+91 92136 12377</a></p>
             <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Mon–Sat · 8am to 9pm IST</p>
           </div>
           <div>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--color-saffron-deep)", margin: 0 }}>Office</p>
-            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>[OFFICE ADDRESS]</p>
-            <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>A/501, Rajvi Elegance, Nikol, Ahmedabad – 382350</p>
+            <p style={{ margin: "var(--space-2) 0 0", fontWeight: 600 }}>A/501, Rajvi Elegance, Nikol</p>
+            <p style={{ margin: "var(--space-1) 0 0", color: "var(--color-ink-mute)", fontSize: "0.9rem" }}>Ahmedabad – 382350, Gujarat</p>
           </div>
         </div>
       </div>
     </section>
-  </main>
+  </>
 );
 
 const QuoteForm = () => {

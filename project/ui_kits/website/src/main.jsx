@@ -7,45 +7,90 @@ import { AboutPage, ContactPage } from '../AboutContact.jsx';
 // ── Page meta ─────────────────────────────────────────────────────────────────
 const META = {
   home: {
-    title: "RDB Travels — Car Rental & Cab Service in Ahmedabad | Outstation Taxi, Tempo Traveller, Bus with Driver",
-    desc:  "Ahmedabad car rental & outstation cab service direct from operator since 2015. Sedan, Innova, Tempo Traveller (12–26 seater), and 56-seater Volvo bus with driver. GST-clear pricing, no broker markup. WhatsApp quote in 15 minutes."
+    title: "RDB Travels — Car Rental & Cab Service, Ahmedabad",
+    desc:  "Ahmedabad car rental & outstation cab — direct operator since 2015. Sedan, Innova, Tempo Traveller, Volvo bus. GST-clear pricing. Quote in 15 min.",
+    canonical: "https://rdbtravels.in",
+    ogUrl: "https://rdbtravels.in",
   },
   about: {
-    title: "About RDB Travels — Ahmedabad Car Rental & Cab Service Operator Since 2015",
-    desc:  "RDB Travels is Ahmedabad's direct car rental and outstation taxi operator since 2015. Founded by Ronak Dineshbhai Barot. Owned fleet, employed drivers, GST-clear pricing across Gujarat and pan-India."
+    title: "About RDB Travels | Direct Operator Since 2015",
+    desc:  "RDB Travels — Ahmedabad's direct outstation cab & car rental operator since 2015. Vetted owner-drivers, 8 vehicle classes, GST-clear pricing across Gujarat and pan-India.",
+    canonical: "https://rdbtravels.in/about",
+    ogUrl: "https://rdbtravels.in/about",
   },
   contact: {
-    title: "Contact RDB Travels — Ahmedabad Cab Service & Car Rental | WhatsApp +91 70210 55109",
-    desc:  "Contact RDB Travels for outstation taxi, car rental, Tempo Traveller hire, and bus with driver in Ahmedabad. WhatsApp for a quote in 15 minutes. Same direct operator since 2015."
+    title: "Contact RDB Travels | WhatsApp Quote in 15 Minutes",
+    desc:  "Book outstation cab, car rental, Tempo Traveller or bus hire with RDB Travels, Ahmedabad. WhatsApp for a quote in 15 min. Direct operator since 2015, no broker.",
+    canonical: "https://rdbtravels.in/contact",
+    ogUrl: "https://rdbtravels.in/contact",
   }
 };
 
+// ── URL → page key ────────────────────────────────────────────────────────────
+const PATH_TO_PAGE = {
+  "/":        "home",
+  "/about":   "about",
+  "/contact": "contact",
+};
+
+function getPageFromPath(pathname) {
+  return PATH_TO_PAGE[pathname] || PATH_TO_PAGE[pathname.replace(/\/$/, "")] || "home";
+}
+
 // ── App shell ─────────────────────────────────────────────────────────────────
 const App = () => {
-  const [page, setPage] = React.useState("home");
+  // Initialise from the actual URL so direct navigation to /about or /contact works
+  const [page, setPage] = React.useState(() => getPageFromPath(window.location.pathname));
+
+  // Keep browser URL bar in sync and support the back/forward buttons
+  const navigate = React.useCallback((newPage) => {
+    const path = newPage === "home" ? "/" : `/${newPage}`;
+    if (window.location.pathname !== path) {
+      window.history.pushState({ page: newPage }, "", path);
+    }
+    setPage(newPage);
+  }, []);
+
+  // Handle browser back/forward
+  React.useEffect(() => {
+    const onPopState = (e) => {
+      const target = e.state?.page || getPageFromPath(window.location.pathname);
+      setPage(target);
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
 
   // Scroll to top on navigation
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [page]);
 
-  // Update <title> and meta description per page
+  // Update <title>, meta description, canonical, og:url, og:title, og:description per page
   React.useEffect(() => {
     const m = META[page] || META.home;
     document.title = m.title;
-    const tag = document.querySelector('meta[name="description"]');
-    if (tag) tag.setAttribute("content", m.desc);
+    const desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", m.desc);
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute("href", m.canonical);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", m.ogUrl);
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", m.title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", m.desc);
   }, [page]);
 
   return (
     <>
-      <Header active={page} onNavigate={setPage} />
+      <Header active={page} onNavigate={navigate} />
       <main id="main-content">
-        {page === "home"    && <HomePage onNavigate={setPage} />}
+        {page === "home"    && <HomePage onNavigate={navigate} />}
         {page === "about"   && <AboutPage />}
         {page === "contact" && <ContactPage />}
       </main>
-      <Footer onNavigate={setPage} />
+      <Footer onNavigate={navigate} />
       <MobileCtaBar />
       <QuoteModal />
     </>

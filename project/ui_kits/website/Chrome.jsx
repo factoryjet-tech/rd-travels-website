@@ -210,7 +210,7 @@ const Header = ({ active = "home", onNavigate }) => {
         <a href="#" className="brand" onClick={(e) => { e.preventDefault(); handleNavigate("home"); }}>
           <span>RDB Travels</span>
         </a>
-        <nav className={`nav__links${menuOpen ? " nav__links--open" : ""}`} aria-label="Primary">
+        <nav id="primary-nav" className={`nav__links${menuOpen ? " nav__links--open" : ""}`} aria-label="Primary navigation">
           {link("home", "Home")}
 
           {/* Services dropdown */}
