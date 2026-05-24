@@ -1,5 +1,9 @@
 # Redirect old Cloudflare preview domain to production
 # https://rd-travels-website.pages.dev/* https://rdbtravels.in/:splat 301
 
+# Duplicate route pages — 301 to canonical root URLs
+/routes/bus-hire-ahmedabad          /bus-hire-ahmedabad          301
+/routes/tempo-traveller-hire-ahmedabad  /tempo-traveller-hire-ahmedabad  301
+
 # SPA fallback — serve index.html for all routes so React router handles /about, /contact, etc.
 /*    /index.html   200

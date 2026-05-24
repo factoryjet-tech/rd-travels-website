@@ -104,18 +104,5 @@
   </url>
 
 
-  <!-- ── routes/ service pages (separate canonicals) ──────────────── -->
-  <url>
-    <loc>https://rdbtravels.in/routes/bus-hire-ahmedabad</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://rdbtravels.in/routes/tempo-traveller-hire-ahmedabad</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
 
 </urlset>
