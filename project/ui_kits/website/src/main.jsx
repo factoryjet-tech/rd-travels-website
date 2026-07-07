@@ -9,20 +9,20 @@ const META = {
   home: {
     title: "RDB Travels — Car Rental & Cab Service, Ahmedabad",
     desc:  "Ahmedabad car rental & outstation cab — direct operator since 2015. Sedan, Innova, Tempo Traveller, Volvo bus. GST-clear pricing. Quote in 15 min.",
-    canonical: "https://rdbtravels.in",
-    ogUrl: "https://rdbtravels.in",
+    canonical: "https://www.rdbtravels.com",
+    ogUrl: "https://www.rdbtravels.com",
   },
   about: {
     title: "About RDB Travels | Direct Operator Since 2015",
     desc:  "RDB Travels — Ahmedabad's direct outstation cab & car rental operator since 2015. Vetted owner-drivers, 8 vehicle classes, GST-clear pricing across Gujarat and pan-India.",
-    canonical: "https://rdbtravels.in/about",
-    ogUrl: "https://rdbtravels.in/about",
+    canonical: "https://www.rdbtravels.com/about",
+    ogUrl: "https://www.rdbtravels.com/about",
   },
   contact: {
     title: "Contact RDB Travels | WhatsApp Quote in 15 Minutes",
     desc:  "Book outstation cab, car rental, Tempo Traveller or bus hire with RDB Travels, Ahmedabad. WhatsApp for a quote in 15 min. Direct operator since 2015, no broker.",
-    canonical: "https://rdbtravels.in/contact",
-    ogUrl: "https://rdbtravels.in/contact",
+    canonical: "https://www.rdbtravels.com/contact",
+    ogUrl: "https://www.rdbtravels.com/contact",
   }
 };
 
